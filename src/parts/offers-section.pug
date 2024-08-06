@@ -1,0 +1,25 @@
+-
+    var blocks = [
+        {'text': 'Обучение с 0', 'pic' : './img/test.jpg'},
+        {'text': 'Удобный график', 'pic' : './img/test.jpg'},
+        {'text': 'Тимбилдинги и корпоративы', 'pic' : './img/test.jpg'},
+        {'text': 'Скидка 30% на продукцию компании', 'pic' : './img/test.jpg'}
+    ]
+
+mixin blocks(items)
+    each item in items
+        .offers__block
+            .offers__image
+                img(src=item.pic)
+            h3.offers__title
+                a(href=item.link)= item.text
+
+section.offers
+    .container
+        .offers__wrap
+            .offers__content
+                .offers__title.title-h2 мы предлагаем
+                .offers__text
+                    p Fudi Pizza заботится о каждом сотруднике, создавая атмосферу уважения, открытости и поддерживая стремление к личному и профессиональному росту
+            .offers__blocks
+                +blocks(blocks)

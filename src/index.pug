@@ -1,0 +1,18 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Подключения test 1 (include)
+        block scripts
+            script(src='./js/script.js')
+        block styles
+            link(rel='stylesheet', type='text/css', href='./css/style.css')
+    body
+        include ./parts/header.pug
+        main
+            include ./parts/jumbotron-section.pug
+            include ./parts/jobs-section.pug
+            include ./parts/about-section.pug
+            include ./parts/offers-section.pug
+            include ./parts/poll-section.pug
+        include ./parts/footer.pug

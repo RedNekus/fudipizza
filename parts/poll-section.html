@@ -1,0 +1,69 @@
+
+<section class="poll">
+  <div class="container">
+    <div class="poll__title title-h2">заполните анкету</div>
+    <div class="poll__form">
+      <form method="post" action="/">
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-group">
+              <input class="form-control" type="text" name="firstname" placeholder="Имя"/>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-group">
+              <input class="form-control" type="text" name="lasttname" placeholder="Фамилия"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-group">
+              <input class="form-control" type="text" name="age" placeholder="Возраст"/>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-group">
+              <input class="form-control" type="text" name="phone" placeholder="Телефон"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-group">
+              <select class="form-select" name="city">
+                <option>Волковыск</option>
+                <option>Слоним</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-group">
+              <select class="form-select" name="position">
+                <option>Администратор</option>
+                <option>Кассир</option>
+                <option>Курьер на авто компании</option>
+                <option>Курьер на авто компании</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="agree" id="agree"/><span>Согласен на <a href="#">обработку персональных данных</a></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-group"></div>
+            <input class="btn btn-primary" type="submit" value="отправить"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

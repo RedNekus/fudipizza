@@ -1,0 +1,16 @@
+- var slider = [{'text': 'Курьер на авто компании', 'link': '#', 'pic' : './img/test.jpg'},{'text': 'Пиццамейкер', 'link': '#', 'pic' : './img/test.jpg'},{'text': 'Курьер на личном авто', 'link': '#', 'pic' : './img/test.jpg'}]
+
+mixin slider(items)
+    .jobs__slider
+        each item in slider
+            .jobs__item
+                .jobs__image
+                    img(src=item.pic)
+                h3.jobs__title
+                    a(href=item.link)= item.text
+                button.slider__button.btn Подробнее
+
+section.jobs
+    .container
+        .jobs__title.title-h2 Fudi pizza в поисках
+        +slider(slider)

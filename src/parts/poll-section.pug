@@ -1,0 +1,41 @@
+mixin input_col(name, placeholder)
+    .col-auto
+        .form-group
+            input(
+                type='text'
+                name=name
+                placeholder=placeholder
+                class='form-control'
+            )
+mixin select_col(name, options)
+    .col-auto
+        .form-group
+            select.form-select(name=name)
+                each option in options
+                    option=option
+
+section.poll
+    .container
+        .poll__title.title-h2 заполните анкету
+        .poll__form
+            form(method='post' action='/')
+                .row
+                    +input_col('firstname', 'Имя')
+                    +input_col('lasttname', 'Фамилия')
+                .row
+                    +input_col('age', 'Возраст')
+                    +input_col('phone', 'Телефон')
+                .row
+                    +select_col('city', ['Волковыск', 'Слоним'])
+                    +select_col('position',  ['Администратор', 'Кассир', 'Курьер на авто компании', 'Курьер на авто компании'])
+                .row
+                    .col-auto
+                        .form-group
+                            label
+                                input(type='checkbox', name='agree', id='agree')
+                                span Согласен на 
+                                    a(href="#") обработку персональных данных
+                .row
+                    .col-auto
+                        .form-group
+                        input.btn.btn-primary(type='submit', value='отправить')
