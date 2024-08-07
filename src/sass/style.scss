@@ -1,15 +1,60 @@
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+body {
+  font-family: 'Futura';
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.container {
+  max-width: 1140px;
+  margin:  0 auto;
+  padding: 110px;
+}
+header {
+  & > .container {
+    display: flex;
   }
-
-  li { display: inline-block; }
-
-  a {
-    display: block;
-    padding: 20px 12px;
-    text-decoration: none;
+  nav {
+    width: 100%;
   }
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'FuturaMediumC';
+  font-size: 20px;
+  &__list {
+    display: flex;
+    align-items: center;
+    li {
+      font-weight: 500;
+      margin: 0 10px;
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &__img {
+    width: 100px;
+    aspect-ratio: 1/1;
+    img {
+      max-width: 100%;
+    }
+  }
+  &__text {
+    font-size: 35px;
+    font-weight: bold;
+  }
+}
+.orange-text {
+  color: #FB5F19;
 }
