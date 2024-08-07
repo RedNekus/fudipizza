@@ -1,16 +1,18 @@
 - var menu = [{'text': 'на главную', 'link': '#'}, {'text': 'вакансии', 'link': '#'}, {'text': 'о нас', 'link': '#'}, {'text': 'анкета', 'link': '#'}]
 header
     .container
-        .logo
-            .logo__img
-                a(href='/')
-                    img(src='./img/logo.svg')
-            .logo__text
         nav.header-nav
-            ul
-                each val in menu
-                    li
-                        a(href=val.link)= val.text
-        .phone
-            p
-                a(href='tel:+375256466951') +375 (25) 646-69-51
+            .logo
+                .logo__img
+                    a(href='/')
+                        img(src='./img/logo.svg')
+                .logo__text
+                    span.orange-text Fudi
+                    |  Pizza
+            ul.header-nav__list
+                    each val in menu
+                        li
+                            a(href=val.link)= val.text
+            .phone
+                p
+                    a(href='tel:+375256466951') +375 (25) 646-69-51

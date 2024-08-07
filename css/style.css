@@ -1,13 +1,64 @@
-nav ul {
-  margin: 0;
+body {
+  font-family: "Futura";
+}
+
+ul {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
-nav li {
-  display: inline-block;
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 110px;
 }
-nav a {
-  display: block;
-  padding: 20px 12px;
+
+header > .container {
+  display: flex;
+}
+header nav {
+  width: 100%;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "FuturaMediumC";
+  font-size: 20px;
+}
+.header-nav__list {
+  display: flex;
+  align-items: center;
+}
+.header-nav__list li {
+  font-weight: 500;
+  margin: 0 10px;
+}
+.header-nav__list li a {
+  text-transform: uppercase;
   text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo__img {
+  width: 100px;
+  aspect-ratio: 1/1;
+}
+.logo__img img {
+  max-width: 100%;
+}
+.logo__text {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.orange-text {
+  color: #FB5F19;
 }
