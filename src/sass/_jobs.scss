@@ -1,0 +1,17 @@
+.jobs {
+    background: #FEF6F1;
+    & > .container {
+        padding: 110px;
+      }
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+.slider {
+   &__button {
+    height: 52px;
+    min-width: 214px;
+    font-size: 16px;
+   }
+}

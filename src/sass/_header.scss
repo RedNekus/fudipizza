@@ -1,0 +1,50 @@
+header {
+    & > .container {
+      display: flex;
+    }
+    nav {
+      width: 100%;
+    }
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    &__list {
+      display: flex;
+      align-items: center;
+      li {
+        font-weight: 500;
+        margin: 0 10px;
+        a {
+          text-transform: uppercase;
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+    &__phone {
+      font-weight: 700;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &__img {
+      width: 100px;
+      aspect-ratio: 1/1;
+      img {
+        max-width: 100%;
+      }
+    }
+    &__text {
+      font-size: 35px;
+      font-weight: bold;
+    }
+  }

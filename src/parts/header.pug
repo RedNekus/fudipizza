@@ -11,8 +11,8 @@ header
                     |  Pizza
             ul.header-nav__list
                     each val in menu
-                        li
+                        li.header-nav__item
                             a(href=val.link)= val.text
-            .phone
+            .header-nav__phone
                 p
                     a(href='tel:+375256466951') +375 (25) 646-69-51

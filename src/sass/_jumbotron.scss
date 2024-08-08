@@ -1,0 +1,33 @@
+.jumbotron {
+  & > .container {
+    padding: 110px;
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    max-width: 610px;
+  }
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    & > * {
+      margin-top: .5em;
+      display: inline-block;
+    }
+    & > p {
+      margin-bottom: 0;
+    }
+  }
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &__button {
+    height: 88px;
+    min-width: 380px;
+    font-size: 23px;
+  }
+}

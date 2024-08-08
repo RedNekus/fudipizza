@@ -1,5 +1,5 @@
 body {
-  font-family: 'Futura';
+  font-family: 'FuturaFuturisC';
 }
 ul {
   padding: 0;
@@ -7,54 +7,62 @@ ul {
   list-style: none;
 }
 .container {
-  max-width: 1140px;
+  max-width: 1440px;
   margin:  0 auto;
-  padding: 110px;
-}
-header {
-  & > .container {
-    display: flex;
-  }
-  nav {
-    width: 100%;
-  }
-}
-.header-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'FuturaMediumC';
-  font-size: 20px;
-  &__list {
-    display: flex;
-    align-items: center;
-    li {
-      font-weight: 500;
-      margin: 0 10px;
-      a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: inherit;
-      }
-    }
-  }
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  &__img {
-    width: 100px;
-    aspect-ratio: 1/1;
-    img {
-      max-width: 100%;
-    }
-  }
-  &__text {
-    font-size: 35px;
-    font-weight: bold;
-  }
+  padding: 0 110px;
+  box-sizing: border-box;
 }
 .orange-text {
   color: #FB5F19;
 }
+.btn {
+  border-radius: 100px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  &-orange {
+    background: #FFE60A;
+    box-shadow: inset 0px 4px 10.9px rgba(154, 56, 1, 0.25);
+  }
+  &-blink  {
+    position: relative;
+    overflow: hidden;
+    & > span {
+      position: relative;
+      z-index: 2;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -5px;
+      background: linear-gradient(270deg,rgba(237,119,30,0) 4.81%,#FB5F19 37.71%,rgba(237,119,30,0) 80.8%);
+      transform: rotate(-7.94deg) translateY(-50%);
+      filter: blur(20px);
+      border-radius: 64px;
+      width: 175%;
+      height: 175%;
+      animation: animate-gradient 1s linear infinite;
+    }
+  }
+}
+.title-h1 {
+  font-size: 65px;
+  line-height: 1.4;
+}
+.title-h2 {
+  font-size: 45px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@keyframes animate-gradient
+{
+  0%{left:-200%}
+  to{left:100%}
+}
+@import 'header';
+@import 'jumbotron';
+@import 'jobs';
