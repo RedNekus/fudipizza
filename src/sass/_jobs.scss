@@ -7,11 +7,24 @@
         text-align: center;
         text-transform: uppercase;
     }
-}
-.slider {
-   &__button {
-    height: 52px;
-    min-width: 214px;
-    font-size: 16px;
-   }
+    &__item {
+        max-width: 30%;
+        position: relative;
+        border-radius: 50px;
+        overflow: hidden;
+        box-shadow: 6px 6px 27.6px rgba(0, 0, 0, 0.15);
+        background-color: white;
+    }
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+    &__city {
+        position:absolute;
+    }
+    &__slider {
+        display: flex;
+        gap: 20px;
+    }
 }

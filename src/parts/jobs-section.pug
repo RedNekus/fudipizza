@@ -1,9 +1,15 @@
-- var slider = [{'text': 'Курьер на авто компании', 'link': '#', 'pic' : './img/test.jpg'},{'text': 'Пиццамейкер', 'link': '#', 'pic' : './img/test.jpg'},{'text': 'Курьер на личном авто', 'link': '#', 'pic' : './img/test.jpg'}]
+-
+    var slider = [
+        {'text': 'Курьер на авто компании', 'link': '#','pic' : './img/jobs-1.jpg', 'city' : 'волковыск'},
+        {'text': 'Пиццамейкер', 'link': '#', 'pic' : './img/jobs-2.jpg', 'city' : 'волковыск'},
+        {'text': 'Курьер на личном авто', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск'}
+    ]
 
 mixin slider(items)
     .jobs__slider
         each item in slider
             .jobs__item
+                .jobs__city= item.city
                 .jobs__image
                     img(src=item.pic)
                 h3.jobs__title

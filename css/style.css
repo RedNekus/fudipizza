@@ -166,9 +166,21 @@ header nav {
   text-align: center;
   text-transform: uppercase;
 }
-
-.slider__button {
-  height: 52px;
-  min-width: 214px;
-  font-size: 16px;
+.jobs__item {
+  max-width: 30%;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 6px 6px 27.6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+.jobs__image img {
+  width: 100%;
+}
+.jobs__city {
+  position: absolute;
+}
+.jobs__slider {
+  display: flex;
+  gap: 20px;
 }
