@@ -1,0 +1,16 @@
+.about {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        flex-basis: 380px;
+    }
+    &__image {
+        overflow: hidden;
+        border-radius: 50px;
+        max-width: 380px;
+        width: 100%;
+        aspect-ratio: 190/149;
+    }
+}

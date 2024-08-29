@@ -6,6 +6,9 @@ ul {
   margin: 0;
   list-style: none;
 }
+img {
+  max-width: 100%;
+}
 .container {
   max-width: 1440px;
   margin:  0 auto;
@@ -66,3 +69,5 @@ ul {
 @import 'header';
 @import 'jumbotron';
 @import 'jobs';
+@import 'offers';
+@import 'about';

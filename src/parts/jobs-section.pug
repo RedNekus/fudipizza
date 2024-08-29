@@ -10,11 +10,13 @@ mixin slider(items)
         each item in slider
             .jobs__item
                 .jobs__city= item.city
-                .jobs__image
-                    img(src=item.pic)
-                h3.jobs__title
-                    a(href=item.link)= item.text
-                button.slider__button.btn.btn-orange.btn-blink  Подробнее
+                .jobs__item-inner
+                    .jobs__image
+                        img(src=item.pic)
+                    h3.jobs__title
+                        a(href=item.link)= item.text
+                    .jobs__bottom
+                        button.jobs__button.btn.btn-orange.btn-blink  Подробнее
 
 section.jobs
     .container
