@@ -12,5 +12,24 @@
         max-width: 380px;
         width: 100%;
         aspect-ratio: 190/149;
+        position: relative;
+        img {
+            position: relative;
+            transform: translateY(-20%);
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 70px;
+    }
+    &__item-title {
+        font-family: 'FuturaMediumC';
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 23px;
+    }
+    &__body {
+        text-align: center;
     }
 }

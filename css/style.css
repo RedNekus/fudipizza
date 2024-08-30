@@ -1,5 +1,5 @@
 body {
-  font-family: "FuturaFuturisC";
+  font-family: "FuturaBookC";
 }
 
 ul {
@@ -67,6 +67,7 @@ img {
   font-size: 45px;
   line-height: 1.4;
   font-weight: 700;
+  font-family: "FuturaMediumC";
 }
 
 @keyframes animate-gradient {
@@ -89,6 +90,8 @@ header nav {
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
+  position: relative;
+  z-index: 2;
 }
 .header-nav__list {
   display: flex;
@@ -102,6 +105,9 @@ header nav {
   text-transform: uppercase;
   text-decoration: none;
   color: inherit;
+}
+.header-nav__list li a:hover {
+  color: #FB5F19;
 }
 .header-nav__phone {
   font-weight: 700;
@@ -149,6 +155,9 @@ header nav {
 .jumbotron__title > p {
   margin-bottom: 0;
 }
+.jumbotron__title strong {
+  font-family: "FuturaMediumC";
+}
 .jumbotron__image {
   position: absolute;
   right: 0;
@@ -169,11 +178,28 @@ header nav {
 .jobs__title {
   text-align: center;
   text-transform: uppercase;
+  font-family: "FuturaMediumC";
+  font-weight: 700;
+  padding-bottom: 70px;
+}
+.jobs__item-title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.jobs__item-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.jobs__item-title a:hover {
+  text-decoration: underline;
 }
 .jobs__item {
   flex-basis: 33.33%;
   position: relative;
   max-width: 380px;
+}
+.jobs__item:nth-child(2) {
+  transform: translateY(80px);
 }
 .jobs__item-inner {
   border-radius: 50px;
@@ -215,6 +241,15 @@ header nav {
   min-width: 214px;
   height: 52px;
 }
+.jobs__dot {
+  display: inline-block;
+  background: #FFD0B2;
+  width: 18px;
+  height: 18px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 .about__list {
   display: flex;
@@ -229,4 +264,23 @@ header nav {
   max-width: 380px;
   width: 100%;
   aspect-ratio: 190/149;
+  position: relative;
+}
+.about__image img {
+  position: relative;
+  transform: translateY(-20%);
+}
+.about__title {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 70px;
+}
+.about__item-title {
+  font-family: "FuturaMediumC";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 23px;
+}
+.about__body {
+  text-align: center;
 }

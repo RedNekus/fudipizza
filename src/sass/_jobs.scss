@@ -6,11 +6,28 @@
     &__title {
         text-align: center;
         text-transform: uppercase;
+        font-family: 'FuturaMediumC';
+        font-weight: 700;
+        padding-bottom: 70px;
+    }
+    &__item-title {
+        text-align: center;
+        text-transform: uppercase;
+        a {
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
     &__item {
         flex-basis: 33.33%;
         position: relative;
         max-width: 380px;
+        &:nth-child(2) {
+            transform: translateY(80px);
+        }
     }
     &__item-inner {
         border-radius: 50px;
@@ -53,5 +70,14 @@
     &__button {
         min-width: 214px;
         height:  52px;
+    }
+    &__dot {
+        display: inline-block;
+        background: #FFD0B2;
+        width: 18px;
+        height: 18px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        cursor: pointer;
     }
 }

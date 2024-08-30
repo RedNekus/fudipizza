@@ -4,9 +4,10 @@ mixin generate_list(items)
             .about__item
                 .about__image
                     img(src=item.pic)
-                h3.about__title
+                h3.about__item-title
                     a(href=item.link)= item.title
-                p=item.text
+                .about__body
+                    p=item.text
 block variables
     -
         let list = [
