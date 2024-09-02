@@ -10,9 +10,13 @@
         font-weight: 700;
         padding-bottom: 70px;
     }
+    &__slider {
+        margin: 80px 0;
+    }
     &__item-title {
         text-align: center;
         text-transform: uppercase;
+        margin: 30px 0;
         a {
             text-decoration: none;
             color: inherit;
@@ -25,8 +29,13 @@
         flex-basis: 33.33%;
         position: relative;
         max-width: 380px;
+        transition: transform 1s, opacity 1s;
+        &:not(:nth-child(2)) {
+            opacity: .7;
+        }
         &:nth-child(2) {
-            transform: translateY(80px);
+            transform: scale(1.25);
+            z-index: 2;
         }
     }
     &__item-inner {
@@ -37,6 +46,8 @@
         width: 100%;
     }
     &__image {
+        aspect-ratio: 380/353;
+        overflow: hidden;
         img {
             width: 100%;
         }
@@ -65,11 +76,17 @@
     &__bottom {
         display: flex;
         justify-content: center;
-        margin: 32px 0;
+        margin: 30px 0;
     }
     &__button {
         min-width: 214px;
         height:  52px;
+    }
+    &__dots {
+        display: flex;
+        justify-content: center;
+        padding-top: 80px;
+        gap: 12px
     }
     &__dot {
         display: inline-block;
