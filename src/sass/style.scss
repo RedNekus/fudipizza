@@ -62,6 +62,9 @@ img {
   font-weight: 700;
   font-family: 'FuturaMediumC';
 }
+.is-hidden {
+  display: none;
+}
 @keyframes animate-gradient
 {
   0%{left:-200%}

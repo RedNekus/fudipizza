@@ -70,6 +70,10 @@ img {
   font-family: "FuturaMediumC";
 }
 
+.is-hidden {
+  display: none;
+}
+
 @keyframes animate-gradient {
   0% {
     left: -200%;
@@ -182,9 +186,6 @@ header nav {
   font-weight: 700;
   padding-bottom: 70px;
 }
-.jobs__slider {
-  margin: 80px 0;
-}
 .jobs__item-title {
   text-align: center;
   text-transform: uppercase;
@@ -197,17 +198,34 @@ header nav {
 .jobs__item-title a:hover {
   text-decoration: underline;
 }
+.jobs__slider {
+  display: flex;
+  gap: 20px;
+  padding: 80px 0;
+  position: relative;
+}
 .jobs__item {
   flex-basis: 33.33%;
-  position: relative;
+  position: absolute;
   max-width: 380px;
+  transition: transform 1s, opacity 1s;
+  flex-shrink: 0;
 }
-.jobs__item:not(:nth-child(2)) {
+.jobs__item:not(.active) {
   opacity: 0.7;
 }
-.jobs__item:nth-child(2) {
+.jobs__item.active {
   transform: scale(1.25);
   z-index: 2;
+}
+.jobs__item:nth-child(2) {
+  left: calc(33.3% + 20px);
+}
+.jobs__item:nth-child(3) {
+  left: calc(66.6% + 40px);
+}
+.jobs__item:nth-child(n+4) {
+  display: none;
 }
 .jobs__item-inner {
   border-radius: 50px;
@@ -239,11 +257,6 @@ header nav {
   text-transform: uppercase;
   font-size: 16px;
 }
-.jobs__slider {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
 .jobs__bottom {
   display: flex;
   justify-content: center;
@@ -267,6 +280,9 @@ header nav {
   aspect-ratio: 1/1;
   border-radius: 50%;
   cursor: pointer;
+}
+.jobs__dot.active {
+  background: #FB5F19;
 }
 
 .offers__wrap {
