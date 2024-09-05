@@ -1,20 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     const slider = document.querySelector(`[JS_Slider]`)
     let blockDots = document.querySelector(`.jobs__dots`)
-    let dots = blockDots.children;
+    let dots = blockDots.children
     let items = slider.children
+    let title = document.querySelector(`.jobs__title`)
+  
 
     const updateParentHeight = () => {
         if(items[0]) {
             let position = items[0].getBoundingClientRect();
-            slider.style.height = `${position.height}px`;
+            slider.style.height = `${position.height * 1.25}px`;
+            slider.parentElement.style.height = (position.height * 1.25 + title.offsetHeight + blockDots.offsetHeight + 160) + 'px'
         }
     }
     window.onload = updateParentHeight
     window.addEventListener('resize', updateParentHeight)
     //let mid = parseInt(items.length/2)
-    items[1].classList.add(`active`)
-    dots[1].classList.add(`active`)
+    items[2].classList.add(`active`)
+    dots[2].classList.add(`active`)
     if(null !== dots && dots.length > 0) {
         for (let itemDot of dots) {
             itemDot.addEventListener('click', () => {
