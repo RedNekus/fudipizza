@@ -1,17 +1,17 @@
 -
     var slider = [
-        {'text': 'Курьер на авто компании', 'link': '#','pic' : './img/jobs-1.jpg', 'city' : 'волковыск'},
-        {'text': 'Пиццамейкер', 'link': '#', 'pic' : './img/jobs-2.jpg', 'city' : 'волковыск'},
-        {'text': 'Курьер на личном авто', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск'},
-        {'text': 'Курьер на авто компании 2', 'link': '#','pic' : './img/jobs-1.jpg', 'city' : 'волковыск'},
-        {'text': 'Пиццамейкер 2', 'link': '#', 'pic' : './img/jobs-2.jpg', 'city' : 'волковыск'},
-        {'text': 'Курьер на личном авто 2', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск'}
+        {'text': 'Курьер на авто компании', 'link': '#','pic' : './img/jobs-1.jpg', 'city' : 'волковыск', 'class' : 'left-hide'},
+        {'text': 'Пиццамейкер', 'link': '#', 'pic' : './img/jobs-2.jpg', 'city' : 'волковыск', 'class' : 'left'},
+        {'text': 'Курьер на личном авто', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск', 'class' : 'active'},
+        {'text': 'Курьер на авто компании 2', 'link': '#','pic' : './img/jobs-1.jpg', 'city' : 'волковыск', 'class' : 'right'},
+        {'text': 'Пиццамейкер 2', 'link': '#', 'pic' : './img/jobs-2.jpg', 'city' : 'волковыск', 'class' : 'right-hide'},
+        {'text': 'Курьер на личном авто 2', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск', 'class' : 'right-hide'}
     ]
 
 mixin slider(items)
     .jobs__slider(JS_Slider)
         each item in slider
-            .jobs__item
+            .jobs__item(class=item.class)
                 .jobs__city= item.city
                 .jobs__item-inner
                     .jobs__image
