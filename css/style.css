@@ -201,11 +201,11 @@ header nav {
   text-decoration: underline;
 }
 .jobs__slider {
-  padding: 80px 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 133px;
 }
 .jobs__item {
   position: absolute;
@@ -215,7 +215,7 @@ header nav {
   margin-left: -190px;
   transition: transform 1s, opacity 1s;
 }
-.jobs__item.active {
+.jobs__item.active--big {
   transform: scale(1.25);
   z-index: 2;
 }

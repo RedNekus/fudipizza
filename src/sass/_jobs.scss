@@ -24,11 +24,11 @@
         }
     }
     &__slider {
-        padding: 80px 0;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        margin-top: 133px;
     }
     &__item {
         position: absolute;
@@ -37,7 +37,7 @@
         left: 50%;
         margin-left: -190px;
         transition: transform 1s, opacity 1s;
-        &.active {
+        &.active--big {
             transform: scale(1.25);
             z-index: 2;
         }
