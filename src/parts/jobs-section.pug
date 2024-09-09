@@ -1,8 +1,8 @@
 -
-    var slider = [
+    let slider = [
         {'text': 'Курьер на авто компании', 'link': '#','pic' : './img/jobs-1.jpg', 'city' : 'волковыск', 'class' : 'left-hide'},
         {'text': 'Пиццамейкер', 'link': '#', 'pic' : './img/jobs-2.jpg', 'city' : 'волковыск', 'class' : 'left'},
-        {'text': 'Курьер на личном авто', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск', 'class' : 'active'},
+        {'text': 'Курьер на личном авто', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск', 'class' : 'active active--big'},
         {'text': 'Курьер на авто компании 2', 'link': '#','pic' : './img/jobs-1.jpg', 'city' : 'волковыск', 'class' : 'right'},
         {'text': 'Пиццамейкер 2', 'link': '#', 'pic' : './img/jobs-2.jpg', 'city' : 'волковыск', 'class' : 'right-hide'},
         {'text': 'Курьер на личном авто 2', 'link': '#', 'pic' : './img/jobs-3.jpg', 'city' : 'волковыск', 'class' : 'right-hide'}
@@ -20,12 +20,12 @@ mixin slider(items)
                         a(href=item.link)= item.text
                     .jobs__bottom
                         button.jobs__button.btn.btn-orange.btn-blink  Подробнее
-    - var n = 0;
+    - let n = 0;
     .jobs__dots
-        while n < 4
+        while n < slider.length
             span(data-num= n++).jobs__dot
 
-section.jobs
+section.jobs.section-dark
     .container
         .jobs__title.title-h2 Fudi pizza в поисках
         +slider(slider)

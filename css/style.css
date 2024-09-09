@@ -1,6 +1,7 @@
 body {
   font-family: "FuturaBookC";
   overflow-x: hidden;
+  font-size: 23px;
 }
 
 ul {
@@ -11,6 +12,10 @@ ul {
 
 img {
   max-width: 100%;
+}
+
+.section-dark {
+  background: #FEF6F1;
 }
 
 .container {
@@ -145,6 +150,7 @@ header nav {
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .jumbotron__content {
   max-width: 610px;
@@ -166,7 +172,7 @@ header nav {
 .jumbotron__image {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -5px;
 }
 .jumbotron__button {
   height: 88px;
@@ -174,9 +180,6 @@ header nav {
   font-size: 23px;
 }
 
-.jobs {
-  background: #FEF6F1;
-}
 .jobs > .container {
   padding: 110px;
   position: relative;
@@ -186,7 +189,6 @@ header nav {
   text-transform: uppercase;
   font-family: "FuturaMediumC";
   font-weight: 700;
-  padding-bottom: 70px;
 }
 .jobs__item-title {
   text-align: center;
@@ -273,12 +275,12 @@ header nav {
   height: 52px;
 }
 .jobs__dots {
+  padding-top: 200px;
   display: flex;
   justify-content: center;
-  padding-top: 80px;
   gap: 12px;
   position: absolute;
-  bottom: 80px;
+  bottom: 100px;
   width: 100%;
   transform: translateX(-50%);
   left: 50%;
@@ -296,10 +298,15 @@ header nav {
   background: #FB5F19;
 }
 
+.offers > .container {
+  padding: 110px;
+  position: relative;
+}
 .offers__wrap {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 80px;
 }
 .offers__block {
   background: linear-gradient(180deg, #FF791F 0%, #FFA51F 63.28%, #FFE178 136.08%);
@@ -320,8 +327,11 @@ header nav {
 }
 .offers__title {
   text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.offers__title-item {
+  text-transform: uppercase;
   font-weight: 500;
-  font-size: 23px;
 }
 
 .about__list {
@@ -358,9 +368,14 @@ header nav {
   text-align: center;
 }
 
+.poll > .container {
+  padding: 110px;
+  position: relative;
+}
 .poll__title {
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 .form-select, .form-control {
@@ -372,6 +387,16 @@ header nav {
   line-height: 29px;
   color: #C9C4C4;
   height: 70px;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+:root {
+  --radius: 0;
+  --baseFg: white;
+  --baseBg: black;
+  --accentFg: black;
+  --accentBg: orange;
 }
 
 .form-control {
@@ -379,6 +404,24 @@ header nav {
 }
 .form-select {
   width: 100%;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2216%22%20height%3D%2210%22%20viewBox%3D%220%200%2016%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1%201.5L8%208.5L15%201.5%22%20stroke%3D%22%23C9C4C4%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 32px top 50%;
+  background-size: 16px auto;
+  color: var(--baseFg);
+  background-color: var(--baseBg);
+}
+.form-select::-ms-expand {
+  display: none;
+}
+.form-select:active {
+  background-image: linear-gradient(var(--accentFg), var(--accentFg)), linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%), linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%), linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+  color: var(--accentBg);
+  border-color: var(--accentFg);
+  background-color: var(--accentFg);
+  border-radius: 90px;
 }
 
 .row {

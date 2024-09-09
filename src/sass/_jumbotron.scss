@@ -5,6 +5,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
   }
   &__content {
     max-width: 610px;
@@ -26,7 +27,7 @@
   &__image {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -5px;
   }
   &__button {
     height: 88px;

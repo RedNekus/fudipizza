@@ -1,6 +1,7 @@
 body {
   font-family: 'FuturaBookC';
   overflow-x: hidden;
+  font-size: 23px;
 }
 ul {
   padding: 0;
@@ -9,6 +10,9 @@ ul {
 }
 img {
   max-width: 100%;
+}
+.section-dark {
+  background: #FEF6F1;
 }
 .container {
   max-width: 1440px;

@@ -1,7 +1,12 @@
 .poll {
+    & > .container {
+        padding: 110px;
+        position: relative;
+    }
     &__title {
         text-transform: uppercase;
         text-align: center;
+        margin-bottom: 80px;
     }
 }
 %input {
@@ -13,7 +18,15 @@
     line-height: 29px;
     color: #C9C4C4;
     height: 70px;
-    
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+:root {
+    --radius: 0;
+    --baseFg: white;
+    --baseBg: black;
+    --accentFg: black;
+    --accentBg: orange;
 }
 .form {
     &-control {
@@ -23,6 +36,17 @@
     &-select {
         @extend %input;
         width: 100%;
+        outline: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2216%22%20height%3D%2210%22%20viewBox%3D%220%200%2016%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1%201.5L8%208.5L15%201.5%22%20stroke%3D%22%23C9C4C4%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+        background-position: right 32px top 50%;
+        background-size: 16px auto;
+        color: var(--baseFg);
+        background-color: var(--baseBg);
+        &::-ms-expand {
+            display: none;
+        }
     }
 }
 .row {

@@ -1,8 +1,13 @@
 .offers {
+    & > .container {
+        padding: 110px;
+        position: relative;
+    }
     &__wrap {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        gap: 80px;
     }
     &__block {
         background: linear-gradient(180deg, #FF791F 0%, #FFA51F 63.28%, #FFE178 136.08%);
@@ -22,10 +27,12 @@
        gap: 24px;
        grid-template-columns: 1fr 1fr;
     }
-
     &__title {
         text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+    &__title-item {
+        text-transform: uppercase;
         font-weight: 500;
-        font-size: 23px;
     }
 }

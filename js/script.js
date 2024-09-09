@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let dots = blockDots.children
     let items = slider.children
     let title = document.querySelector(`.jobs__title`)
+    let activeIndex = 2
 
     const next = () => {
         if (document.querySelector(".left-hide")) {
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelector(".active").classList.add("left");
         document.querySelector(".active").classList.remove("active");
+        document.querySelector(".active").classList.remove("active--big");
       
         document.querySelector(".right").classList.add("active");
         document.querySelector(".right").classList.remove("right");
@@ -78,14 +80,22 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     }
                     itemDot.classList.add('active');
-                    let index = itemDot.dataset.num
-                    if(null !== index && items[index]) {
-                        //items[index].classList.add(`is-hidden`)
+                    let currIndex = itemDot.dataset.num
+                    if(null !== currIndex && items[currIndex]) {
+                        let offsetIndex = currIndex - activeIndex
+                        let offsetIndexAbs = Math.abs(offsetIndex)
+                        let fn = () => {}
+                        if(offsetIndex > 0) {
+                            fn = next;
+                        } else {
+                            fn = prew;
+                        }
+                        for(i=0; i < offsetIndexAbs; i++) {
+                            setTimeout(fn, 1000*i)
+                        }
+                        activeIndex = currIndex;
+                        setTimeout(() => items[2].classList.add('active--big'), offsetIndexAbs * 1000)
                     }
-                    //next();
-                    prew();
-                    setTimeout(prew, 1000);
-                    setTimeout(() => items[2].classList.add('active--big'), 2000)
                 }
             })
         }
