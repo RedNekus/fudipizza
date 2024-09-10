@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         document.querySelector(".active").classList.add("left");
-        document.querySelector(".active").classList.remove("active");
         document.querySelector(".active").classList.remove("active--big");
+        document.querySelector(".active").classList.remove("active");
       
         document.querySelector(".right").classList.add("active");
         document.querySelector(".right").classList.remove("right");
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         document.querySelector(".active").classList.add("right");
-        document.querySelector(".active").classList.remove("active");
         document.querySelector(".active").classList.remove("active--big");
+        document.querySelector(".active").classList.remove("active");
       
         document.querySelector(".left").classList.add("active");
         document.querySelector(".left").classList.remove("left");

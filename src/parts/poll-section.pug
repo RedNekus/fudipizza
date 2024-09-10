@@ -30,12 +30,12 @@ section.poll
                     +select_col('position',  ['Администратор', 'Кассир', 'Курьер на авто компании', 'Курьер на авто компании'])
                 .row
                     .col-auto
-                        .form-group
-                            label
-                                input(type='checkbox', name='agree', id='agree')
+                        .form-check
+                            input.form-check-input(type='checkbox', name='agree', id='agree')
+                            label.form-check-label(for="agree")
                                 span Согласен на 
                                     a(href="#") обработку персональных данных
                 .row
                     .col-auto
-                        .form-group
-                        input.btn.btn-primary(type='submit', value='отправить')
+                        .form-group.text-center.form-group--bottom
+                            button.btn.btn-orange.btn-blink.poll__btn отправить

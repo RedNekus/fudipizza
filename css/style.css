@@ -1,3 +1,8 @@
+:root {
+  --orange: #FB5F19;
+  --yellow: #FFE60A;
+}
+
 body {
   font-family: "FuturaBookC";
   overflow-x: hidden;
@@ -14,6 +19,17 @@ img {
   max-width: 100%;
 }
 
+a {
+  color: var(--orange);
+}
+a:hover {
+  color: var(--yellow);
+}
+
+h3 a {
+  color: inherit;
+}
+
 .section-dark {
   background: #FEF6F1;
 }
@@ -26,7 +42,11 @@ img {
 }
 
 .orange-text {
-  color: #FB5F19;
+  color: var(--orange);
+}
+
+.text-center {
+  text-align: center;
 }
 
 .btn {
@@ -198,6 +218,7 @@ header nav {
 .jobs__item-title a {
   text-decoration: none;
   color: inherit;
+  white-space: nowrap;
 }
 .jobs__item-title a:hover {
   text-decoration: underline;
@@ -368,16 +389,6 @@ header nav {
   text-align: center;
 }
 
-.poll > .container {
-  padding: 110px;
-  position: relative;
-}
-.poll__title {
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 80px;
-}
-
 .form-select, .form-control {
   background: #FFFFFF;
   border: 1px solid #C9C4C4;
@@ -392,11 +403,22 @@ header nav {
 }
 
 :root {
-  --radius: 0;
-  --baseFg: white;
-  --baseBg: black;
-  --accentFg: black;
-  --accentBg: orange;
+  --orange-light: #FEF6F1;
+}
+
+.poll > .container {
+  padding: 110px;
+  position: relative;
+}
+.poll__title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.poll__btn {
+  height: 88px;
+  min-width: 380px;
+  font-size: 23px;
 }
 
 .form-control {
@@ -410,18 +432,41 @@ header nav {
   background-repeat: no-repeat;
   background-position: right 32px top 50%;
   background-size: 16px auto;
-  color: var(--baseFg);
-  background-color: var(--baseBg);
 }
-.form-select::-ms-expand {
-  display: none;
+.form-group.form-group--bottom {
+  margin-top: 80px;
 }
-.form-select:active {
-  background-image: linear-gradient(var(--accentFg), var(--accentFg)), linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%), linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%), linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
-  color: var(--accentBg);
-  border-color: var(--accentFg);
-  background-color: var(--accentFg);
-  border-radius: 90px;
+.form-group.text-center {
+  display: flex;
+  justify-content: center;
+}
+.form-check {
+  margin-top: 32px;
+}
+.form-check-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.form-check-input:checked + label::after {
+  content: url("data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M26.6666%209.3335L11.9999%2024.0002L5.33325%2017.3335%22%20stroke%3D%22%23FB5F19%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+  position: absolute;
+}
+.form-check-label {
+  display: flex;
+  position: relative;
+}
+.form-check-label::before {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background-color: var(--orange-light);
+  border: none;
+  border-radius: 7px;
+  margin-right: 50px;
 }
 
 .row {
@@ -432,4 +477,80 @@ header nav {
 
 .col-auto {
   flex-basis: 50%;
+  flex-grow: 1;
+}
+
+footer .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 20px;
+}
+footer .grid-col__apps {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+footer .grid-text__content {
+  font-size: 20px;
+}
+footer .grid-text__title {
+  margin-bottom: 32px;
+}
+footer .grid-links {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+footer .grid-apps__link {
+  color: white;
+  background-color: black;
+  height: 56px;
+  border-radius: 20px;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+footer .grid-socials {
+  display: flex;
+  gap: 32px;
+  grid-column-end: 4;
+  margin-bottom: 110px;
+}
+footer .grid-socials__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+footer .grid-socials__link:hover {
+  color: var(--orange);
+}
+footer .grid-socials__link:hover::before {
+  background-color: var(--orange);
+}
+footer .grid-socials__link::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  content: "";
+  width: 36px;
+  height: 36px;
+  border-radius: 7px;
+  background-color: black;
+}
+footer .grid-socials__link.ig::before {
+  content: url("data:image/svg+xml,%3Csvg%20width%3D%2234%22%20height%3D%2234%22%20viewBox%3D%220%200%2034%2034%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M26.4875%209.1625C26.4875%209.3905%2026.4425%209.61629%2026.3553%209.82692C26.2681%2010.0376%2026.1401%2010.229%2025.979%2010.3902C25.8178%2010.5514%2025.6263%2010.6793%2025.4156%2010.7666C25.205%2010.8538%2024.9793%2010.8987%2024.7513%2010.8987C24.5233%2010.8987%2024.2975%2010.8538%2024.0868%2010.7666C23.8762%2010.6793%2023.6848%2010.5514%2023.5235%2010.3902C23.3623%2010.229%2023.2344%2010.0376%2023.1472%209.82692C23.0598%209.61629%2023.015%209.3905%2023.015%209.1625C23.015%208.70202%2023.1978%208.2604%2023.5235%207.93479C23.8492%207.60918%2024.2908%207.42625%2024.7513%207.42625C25.2118%207.42625%2025.6533%207.60918%2025.979%207.93479C26.3045%208.2604%2026.4875%208.70202%2026.4875%209.1625ZM32%2017V17.0225L31.9006%2023.315C31.8753%2025.5843%2030.9626%2027.7537%2029.3579%2029.3585C27.7535%2030.9635%2025.5843%2031.8766%2023.315%2031.9025L17%2032H16.9775L10.685%2031.9006C8.41563%2031.8753%206.24633%2030.9626%204.64139%2029.3581C3.03643%2027.7535%202.12333%2025.5843%202.0975%2023.315L2%2017V16.9775L2.09937%2010.685C2.12471%208.41563%203.03733%206.24633%204.64193%204.64139C6.24654%203.03643%208.41563%202.12332%2010.685%202.0975L17%202H17.0225L23.315%202.09938C25.5843%202.12471%2027.7537%203.03733%2029.3585%204.64193C30.9635%206.24654%2031.8766%208.41563%2031.9025%2010.685L32%2017ZM29.2063%2017L29.1088%2010.7281C29.0911%209.18552%2028.4705%207.71106%2027.3798%206.62021C26.2889%205.52937%2024.8145%204.90878%2023.2719%204.89125L17%204.79375L10.7281%204.89125C9.18552%204.90878%207.71106%205.52937%206.62021%206.62021C5.52937%207.71106%204.90878%209.18552%204.89125%2010.7281L4.79375%2017L4.89125%2023.2719C4.90878%2024.8144%205.52937%2026.2889%206.62021%2027.3798C7.71106%2028.4707%209.18552%2029.0911%2010.7281%2029.1088L17%2029.2063L23.2719%2029.1088C24.8145%2029.0911%2026.2889%2028.4707%2027.3798%2027.3798C28.4705%2026.2889%2029.0911%2024.8144%2029.1088%2023.2719L29.2063%2017ZM24.7025%2017C24.7025%2019.0428%2023.891%2021.002%2022.4465%2022.4465C21.002%2023.891%2019.0428%2024.7025%2017%2024.7025C14.9572%2024.7025%2012.998%2023.891%2011.5535%2022.4465C10.109%2021.002%209.2975%2019.0428%209.2975%2017C9.2975%2014.9572%2010.109%2012.998%2011.5535%2011.5535C12.998%2010.109%2014.9572%209.2975%2017%209.2975C19.0428%209.2975%2021.002%2010.109%2022.4465%2011.5535C23.891%2012.998%2024.7025%2014.9572%2024.7025%2017ZM21.9088%2017C21.9088%2015.6981%2021.3916%2014.4495%2020.471%2013.529C19.5504%2012.6084%2018.3019%2012.0912%2017%2012.0912C15.6981%2012.0912%2014.4495%2012.6084%2013.529%2013.529C12.6084%2014.4495%2012.0912%2015.6981%2012.0912%2017C12.0912%2018.3019%2012.6084%2019.5504%2013.529%2020.471C14.4495%2021.3916%2015.6981%2021.9088%2017%2021.9088C18.3019%2021.9088%2019.5504%2021.3916%2020.471%2020.471C21.3916%2019.5504%2021.9088%2018.3019%2021.9088%2017Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+footer .grid-socials__link.fb::before {
+  content: url("data:image/svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cg%20clip-path%3D%22url%28%23clip0_2_4%29%22%3E%0A%3Cpath%20d%3D%22M21.9284%2016.7476L22.7548%2011.3592H17.5849V7.86252C17.5849%206.38836%2018.3071%204.95146%2020.6227%204.95146H22.9733V0.364102C22.9733%200.364102%2020.84%200%2018.8006%200C14.5426%200%2011.7597%202.58059%2011.7597%207.25244V11.3592H7.02667V16.7476H11.7597V29.7735C12.7087%2029.9224%2013.6815%2030%2014.6723%2030C15.6632%2030%2016.6359%2029.9224%2017.5849%2029.7735V16.7476H21.9284Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fg%3E%0A%3Cdefs%3E%0A%3CclipPath%20id%3D%22clip0_2_4%22%3E%0A%3Crect%20width%3D%2230%22%20height%3D%2230%22%20fill%3D%22white%22%2F%3E%0A%3C%2FclipPath%3E%0A%3C%2Fdefs%3E%0A%3C%2Fsvg%3E");
+  align-items: end;
+  justify-content: end;
+}
+footer .grid-socials__link.vk::before {
+  content: url("data:image/svg+xml,%3Csvg%20width%3D%2234%22%20height%3D%2234%22%20viewBox%3D%220%200%2034%2034%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M28.9798%209.65898H24.7607C24.5884%209.65898%2024.4195%209.70645%2024.2717%209.79634C24.1239%209.88623%2024.0028%2010.0152%2023.9214%2010.1695C23.9214%2010.1695%2022.2387%2013.3205%2021.6981%2014.3818C20.244%2017.2369%2019.3024%2016.3406%2019.3024%2015.0155V10.4467C19.3024%2010.0649%2019.1532%209.69871%2018.8877%209.42874C18.6222%209.15878%2018.2621%209.00711%2017.8866%209.00711H14.7144C14.2824%208.97445%2013.8493%209.05463%2013.4564%209.24003C13.0634%209.42542%2012.7236%209.70989%2012.4692%2010.0664C12.4692%2010.0664%2014.08%209.80158%2014.08%2012.0084C14.08%2012.5556%2014.1077%2014.1299%2014.133%2015.4502C14.1378%2015.6448%2014.0837%2015.8362%2013.9781%2015.9985C13.8725%2016.1609%2013.7204%2016.2863%2013.5425%2016.358C13.3645%2016.4297%2013.1692%2016.4442%2012.9829%2016.3994C12.7966%2016.3546%2012.6283%2016.2528%2012.5007%2016.1077C11.2023%2014.2715%2010.1267%2012.2826%209.29747%2010.1841C9.22626%2010.0271%209.11225%209.89423%208.96897%209.80115C8.8257%209.70807%208.65917%209.65873%208.48915%209.65898C7.57415%209.65898%205.74316%209.65898%204.6558%209.65898C4.55036%209.65825%204.44632%209.68356%204.35262%209.73273C4.25892%209.7819%204.17836%209.85347%204.11787%209.94128C4.05737%2010.0291%204.01874%2010.1305%204.00531%2010.2369C3.99187%2010.3432%204.00403%2010.4513%204.04073%2010.5518C5.20472%2013.7981%2010.2188%2024%2015.9419%2024H18.3508C18.6031%2024%2018.8452%2023.898%2019.0237%2023.7166C19.2021%2023.5351%2019.3024%2023.289%2019.3024%2023.0324V21.5534C19.3024%2021.3679%2019.3558%2021.1864%2019.456%2021.0314C19.5562%2020.8763%2019.6988%2020.7545%2019.8662%2020.6808C20.0337%2020.6071%2020.2187%2020.5849%2020.3985%2020.6168C20.5782%2020.6488%2020.7448%2020.7335%2020.8778%2020.8605L23.761%2023.6149C24.02%2023.8623%2024.3619%2024%2024.7172%2024H28.5034C30.3295%2024%2030.3295%2022.7116%2029.3338%2021.7146C28.6332%2021.013%2026.1048%2018.3033%2026.1048%2018.3033C25.8883%2018.0752%2025.7591%2017.7759%2025.7407%2017.4595C25.7223%2017.143%2025.8158%2016.8303%2026.0043%2016.5779C26.8216%2015.4844%2028.1583%2013.6943%2028.7252%2012.9275C29.5001%2011.8794%2030.9025%209.65898%2028.9798%209.65898Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
 }

@@ -219,17 +219,17 @@
               </div>
               <div class="row">
                 <div class="col-auto">
-                  <div class="form-group">
-                    <label>
-                      <input type="checkbox" name="agree" id="agree"><span>Согласен на <a href="#">обработку персональных данных</a></span>
-                    </label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="agree" id="agree">
+                    <label class="form-check-label" for="agree"><span>Согласен на <a href="#">обработку персональных данных</a></span></label>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-auto">
-                  <div class="form-group"></div>
-                  <input class="btn btn-primary" type="submit" value="отправить">
+                  <div class="form-group text-center form-group--bottom">
+                    <button class="btn btn-orange btn-blink poll__btn">отправить</button>
+                  </div>
                 </div>
               </div>
             </form>
@@ -246,8 +246,10 @@
           </div>
         </div>
         <div class="grid-links"><a href="#">Политика конфиденциальности</a><a href="#">Публичная оферта</a></div>
-        <div class="grid-actions">Акции, скидки, кэшбэк - в нашем приложении!</div>
-        <div class="grid-apps"><a class="grid-apps__link google" href="#">Google Play</a><a class="grid-apps__link apple" href="#">App Store</a></div>
+        <div class="grid-col">
+          <div class="grid-col__actions">Акции, скидки, кэшбэк - в нашем приложении!</div>
+          <div class="grid-col__apps"><a class="grid-apps__link google" href="#">Google Play</a><a class="grid-apps__link apple" href="#">App Store</a></div>
+        </div>
         <div class="grid-socials"><a class="grid-socials__link ig" href="#">Instagram</a><a class="grid-socials__link fb" href="#">Facebook</a><a class="grid-socials__link vk" href="#">Вконтакте</a></div>
       </div>
     </footer>

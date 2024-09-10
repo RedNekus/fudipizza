@@ -1,3 +1,7 @@
+:root {
+  --orange: #FB5F19;
+  --yellow: #FFE60A;
+}
 body {
   font-family: 'FuturaBookC';
   overflow-x: hidden;
@@ -11,6 +15,15 @@ ul {
 img {
   max-width: 100%;
 }
+a {
+  color: var(--orange);
+  &:hover {
+    color: var(--yellow);
+  }
+}
+h3 a {
+  color: inherit;
+}
 .section-dark {
   background: #FEF6F1;
 }
@@ -21,7 +34,10 @@ img {
   box-sizing: border-box;
 }
 .orange-text {
-  color: #FB5F19;
+  color: var(--orange);
+}
+.text-center {
+  text-align: center;
 }
 .btn {
   border-radius: 100px;
@@ -81,3 +97,4 @@ img {
 @import 'offers';
 @import 'about';
 @import 'poll';
+@import 'footer';

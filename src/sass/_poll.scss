@@ -1,14 +1,3 @@
-.poll {
-    & > .container {
-        padding: 110px;
-        position: relative;
-    }
-    &__title {
-        text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 80px;
-    }
-}
 %input {
     background: #FFFFFF;
     border: 1px solid #C9C4C4;
@@ -22,11 +11,23 @@
     box-sizing: border-box;
 }
 :root {
-    --radius: 0;
-    --baseFg: white;
-    --baseBg: black;
-    --accentFg: black;
-    --accentBg: orange;
+    --orange-light: #FEF6F1;
+}
+.poll {
+    & > .container {
+        padding: 110px;
+        position: relative;
+    }
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    &__btn {
+        height: 88px;
+        min-width: 380px;
+        font-size: 23px;
+    }
 }
 .form {
     &-control {
@@ -42,10 +43,43 @@
         background-repeat: no-repeat;
         background-position: right 32px top 50%;
         background-size: 16px auto;
-        color: var(--baseFg);
-        background-color: var(--baseBg);
-        &::-ms-expand {
-            display: none;
+    }
+    &-group {
+        $this: &;
+        &#{$this}--bottom {
+            margin-top: 80px;
+        }
+        &.text-center {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &-check {
+        margin-top: 32px;
+        &-input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            &:checked + label::after {
+                content: url("data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M26.6666%209.3335L11.9999%2024.0002L5.33325%2017.3335%22%20stroke%3D%22%23FB5F19%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+                position: absolute;
+            }
+        }
+        &-label {
+            display: flex;
+            position: relative;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                flex-shrink: 0;
+                flex-grow: 0;
+                background-color: var(--orange-light);
+                border: none;
+                border-radius: 7px;
+                margin-right: 50px;
+            }
         }
     }
 }
@@ -56,4 +90,5 @@
 }
 .col-auto {
     flex-basis: 50%;
+    flex-grow: 1;
 }
