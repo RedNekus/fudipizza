@@ -23,6 +23,9 @@ a {
 }
 h3 a {
   color: inherit;
+  &:hover {
+    color: inherit;
+  }
 }
 .section-dark {
   background: #FEF6F1;
@@ -86,6 +89,13 @@ h3 a {
 .is-hidden {
   display: none;
 }
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear;
+}
+.fade.show {
+  opacity: 1;
+}
 @keyframes animate-gradient
 {
   0%{left:-200%}
@@ -98,3 +108,4 @@ h3 a {
 @import 'about';
 @import 'poll';
 @import 'footer';
+@import 'modal';

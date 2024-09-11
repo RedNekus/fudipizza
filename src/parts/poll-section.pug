@@ -14,11 +14,11 @@ mixin select_col(name, options)
                 each option in options
                     option=option
 
-section.poll
+section.poll(id='poll')
     .container
         .poll__title.title-h2.orange-text заполните анкету
         .poll__form
-            form(method='post' action='/')
+            form(method='post' action='/' id='poll-form')
                 .row
                     +input_col('firstname', 'Имя')
                     +input_col('lasttname', 'Фамилия')

@@ -73,12 +73,15 @@
                 display: inline-block;
                 width: 35px;
                 height: 35px;
-                flex-shrink: 0;
-                flex-grow: 0;
                 background-color: var(--orange-light);
                 border: none;
                 border-radius: 7px;
                 margin-right: 50px;
+            }
+            span {
+                display: inline-flex;
+                align-items: center;
+                gap: .75rem;
             }
         }
     }

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>FudiPizza</title>
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/vacancy.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/stylesheet.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="header-nav">
+          <div class="logo">
+            <div class="logo__img"><a href="/"><img src="./img/logo.svg"></a></div>
+            <div class="logo__text"><span class="orange-text">Fudi</span> Pizza</div>
+          </div>
+          <ul class="header-nav__list">
+            <li class="header-nav__item"><a href="#">на главную</a></li>
+            <li class="header-nav__item"><a href="#">вакансии</a></li>
+            <li class="header-nav__item"><a href="#">о нас</a></li>
+            <li class="header-nav__item"><a href="#">анкета</a></li>
+          </ul>
+          <div class="header-nav__phone">
+            <p><a href="tel:+375256466951">+375 (25) 646-69-51</a></p>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="vacancy">
+        <div class="container">
+          <div class="vacancy__title title-h2 orange-text">пиццамейкер</div>
+          <div class="vacncy__text">Fudi Pizza приглашает на работу пиццамейкера в Слоним. Желательно с опытом работы, но также проводим обучение.</div>
+          <div class="vacancy-grid">
+            <div class="vacancy-grid__job vacancy-grid__item">
+              <div class="vacancy-grid__city">Слоним</div>
+              <div class="vacancy-grid__picture"><img src="./img/jobs-2.jpg"></div>
+              <div class="vacancy-grid__item-inner">
+                <div class="vacancy-grid__title">твои обязанности:</div>
+                <ul class="vacancy-grid__list">
+                  <li>приготовление пицц и закусок</li>
+                  <li>поддержание оптимального количества заготовок в течение рабочего дня </li>
+                </ul>
+              </div>
+            </div>
+            <div class="vacancy-grid__requirements vacancy-grid__item">
+              <div class="vacancy-grid__item-inner">
+                <div class="vacancy-grid__title">Требования:</div>
+                <ul class="vacancy-grid__list">
+                  <li>соблюдение правил санитарии и лично гигиены </li>
+                  <li>санитарная справка или возможность ее сделать</li>
+                </ul>
+              </div>
+            </div>
+            <div class="vacancy-grid__offer vacancy-grid__item">
+              <div class="vacancy-grid__item-inner">
+                <div class="vacancy-grid__title">что мы предлагаем:</div>
+                <ul class="vacancy-grid__list">
+                  <li>полное обучение на рабочем месте</li>
+                  <li>стабильную заработную плату</li>
+                  <li>корпоративную форму одежды</li>
+                  <li>официальное оформление</li>
+                  <li>удобный график</li>
+                  <li>скидка 30% на продукцию компании</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="poll" id="poll">
+        <div class="container">
+          <div class="poll__title title-h2 orange-text">заполните анкету</div>
+          <div class="poll__form">
+            <form method="post" action="/" id="poll-form">
+              <div class="row">
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <input class="form-control" type="text" name="firstname" placeholder="Имя">
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <input class="form-control" type="text" name="lasttname" placeholder="Фамилия">
+                        </div>
+                      </div>
+              </div>
+              <div class="row">
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <input class="form-control" type="text" name="age" placeholder="Возраст">
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <input class="form-control" type="text" name="phone" placeholder="Телефон">
+                        </div>
+                      </div>
+              </div>
+              <div class="row">
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <select class="form-select" name="city">
+                            <option>Волковыск</option>
+                            <option>Слоним</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <select class="form-select" name="position">
+                            <option>Администратор</option>
+                            <option>Кассир</option>
+                            <option>Курьер на авто компании</option>
+                            <option>Курьер на авто компании</option>
+                          </select>
+                        </div>
+                      </div>
+              </div>
+              <div class="row">
+                <div class="col-auto">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="agree" id="agree">
+                    <label class="form-check-label" for="agree"><span>Согласен на <a href="#">обработку персональных данных</a></span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-auto">
+                  <div class="form-group text-center form-group--bottom">
+                    <button class="btn btn-orange btn-blink poll__btn">отправить</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container grid-container">
+        <div class="grid-text">
+          <div class="grid-text__title">ООО “Фудипицца” Волковыск</div>
+          <div class="grid-text__content"> 
+            <p>Номер для заказа +375-33-66-66-035 Самовывоз: Волковыск, ул. Красноармейкая, 90 (БЦ Империал). Юридический адрес: Гродненская область, г. Слоним, ул. Тополевая 22 павильон 26 Р/с BY21BLBB30120591755091001001 ОАО "Белинвестбанк" г. Слоним, ул. Первомайская, 4А УНП 591755091 SWIFT/BLBBBY2X(БИК) ОКПО/505874474000 Свидетельство о государственной регистрации №591755091 от 22 февраля 2022 года выдано Слонимским районным исполнительным комитетом.</p>
+          </div>
+        </div>
+        <div class="grid-links"><a href="#">Политика конфиденциальности</a><a href="#">Публичная оферта</a></div>
+        <div class="grid-col">
+          <div class="grid-col__actions">Акции, скидки, кэшбэк - в нашем приложении!</div>
+          <div class="grid-col__apps"><a class="grid-apps__link google" href="#">Google Play</a><a class="grid-apps__link apple" href="#">App Store</a></div>
+        </div>
+        <div class="grid-socials"><a class="grid-socials__link ig" href="#">Instagram</a><a class="grid-socials__link fb" href="#">Facebook</a><a class="grid-socials__link vk" href="#">Вконтакте</a></div>
+      </div>
+    </footer>
+    <div class="modal fade" aria-hidden="true" role="dialog" id="poll-modal">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-mark"><img src="./img/mark.svg"></div>
+            <div class="close" data-dismiss="modal" arial-label="Close"></div>
+          </div>
+          <div class="modal-body"><strong>Ваша анкета успешно отправлена!</strong>Мы свяжемся с вами в ближайшее время</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

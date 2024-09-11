@@ -5,17 +5,14 @@ html(lang="ru")
         title FudiPizza
         block scripts
             script(src='/js/script.js')
-            script(src='/js/slider.js')
         block styles
             link(rel='stylesheet', type='text/css', href='/css/style.css')
+            link(rel='stylesheet', type='text/css', href='/css/vacancy.css')
             link(rel='stylesheet', type='text/css', href='/fonts/stylesheet.css')
     body
         include ./parts/header.pug
         main
-            include ./parts/jumbotron-section.pug
-            include ./parts/jobs-section.pug
-            include ./parts/about-section.pug
-            include ./parts/offers-section.pug
+            include ./parts/vacancy-section.pug
             include ./parts/poll-section.pug
         include ./parts/footer.pug
         include ./parts/popup.pug

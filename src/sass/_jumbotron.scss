@@ -33,5 +33,10 @@
     height: 88px;
     min-width: 380px;
     font-size: 23px;
+    text-decoration: inherit;
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
   }
 }
