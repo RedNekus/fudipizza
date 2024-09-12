@@ -33,6 +33,10 @@ h3 a:hover {
   color: inherit;
 }
 
+strong {
+  font-family: "FuturaDemiC";
+}
+
 .section-dark {
   background: #FEF6F1;
 }
@@ -96,7 +100,7 @@ h3 a:hover {
   font-size: 45px;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "FuturaMediumC";
+  font-family: "FuturaDemiC";
 }
 
 .is-hidden {
@@ -197,9 +201,6 @@ header nav {
 }
 .jumbotron__title > p {
   margin-bottom: 0;
-}
-.jumbotron__title strong {
-  font-family: "FuturaMediumC";
 }
 .jumbotron__image {
   position: absolute;
@@ -401,7 +402,7 @@ header nav {
   padding: 70px;
 }
 .about__item-title {
-  font-family: "FuturaMediumC";
+  font-family: "FuturaDemiC";
   text-transform: uppercase;
   text-align: center;
   font-size: 23px;
@@ -653,6 +654,10 @@ footer .grid-socials__link.vk::before {
 }
 .modal-body {
   padding: 40px;
+  text-align: center;
+}
+.modal-body p {
+  margin: 0;
 }
 
 .close {

@@ -1,12 +1,13 @@
 {
   "name": "fudipizza",
-  "version": "1.0.0",
+  "version": "1.2.5",
   "description": "",
-  "main": "index.js",
+  "main": "./js/script.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "RedNekus",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^5.0.0",
@@ -14,5 +15,9 @@
     "gulp-sass": "^5.1.0",
     "pug": "^3.0.3",
     "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "validator": "^13.12.0"
   }
 }

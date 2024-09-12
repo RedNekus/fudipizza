@@ -1,3 +1,6 @@
+//import validator from 'validator';
+var validator = require('validator');
+console.log(validator);
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById(`poll-form`)
     const modal = document.getElementById(`poll-modal`)
