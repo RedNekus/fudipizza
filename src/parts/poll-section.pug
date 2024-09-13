@@ -7,12 +7,14 @@ mixin input_col(name, placeholder)
                 placeholder=placeholder
                 class='form-control'
             )
+            .messages
 mixin select_col(name, options)
     .col-auto
         .form-group
             select.form-select(name=name)
                 each option in options
-                    option=option
+                    option(value="")=option
+            .messages
 
 section.poll(id='poll')
     .container
@@ -21,13 +23,13 @@ section.poll(id='poll')
             form(method='post' action='/' id='poll-form')
                 .row
                     +input_col('firstname', 'Имя')
-                    +input_col('lasttname', 'Фамилия')
+                    +input_col('lastname', 'Фамилия')
                 .row
                     +input_col('age', 'Возраст')
                     +input_col('phone', 'Телефон')
                 .row
-                    +select_col('city', ['Волковыск', 'Слоним'])
-                    +select_col('position',  ['Администратор', 'Кассир', 'Курьер на авто компании', 'Курьер на авто компании'])
+                    +select_col('city', ['Город', 'Волковыск', 'Слоним'])
+                    +select_col('position',  ['Должность', 'Администратор', 'Кассир', 'Курьер на авто компании', 'Курьер на авто компании'])
                 .row
                     .col-auto
                         .form-check
@@ -35,6 +37,7 @@ section.poll(id='poll')
                             label.form-check-label(for="agree")
                                 span Согласен на 
                                     a(href="#") обработку персональных данных
+                            .messages
                 .row
                     .col-auto
                         .form-group.text-center.form-group--bottom
