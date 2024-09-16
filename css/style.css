@@ -247,6 +247,7 @@ header nav {
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: 133px;
+  z-index: 2;
 }
 .jobs__item {
   position: absolute;
@@ -312,6 +313,13 @@ header nav {
 .jobs__button {
   min-width: 214px;
   height: 52px;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+.jobs__button:hover {
+  color: inherit;
+  text-decoration: underline;
 }
 .jobs__dots {
   padding-top: 200px;

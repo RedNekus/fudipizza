@@ -28,6 +28,7 @@
         left: 50%;
         transform: translate(-50%,-50%);
         margin-top: 133px;
+        z-index: 2;
     }
     &__item {
         position: absolute;
@@ -93,6 +94,13 @@
     &__button {
         min-width: 214px;
         height:  52px;
+        color: inherit;
+        text-decoration: inherit;
+        cursor: pointer;
+        &:hover {
+            color: inherit;
+            text-decoration: underline;
+        }
     }
     &__dots {
         padding-top: 200px;
