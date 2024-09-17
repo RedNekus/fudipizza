@@ -400,10 +400,6 @@ header nav {
   aspect-ratio: 190/149;
   position: relative;
 }
-.about__image img {
-  position: relative;
-  transform: translateY(-20%);
-}
 .about__title {
   text-transform: uppercase;
   text-align: center;
