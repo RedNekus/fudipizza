@@ -7,28 +7,28 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeIndex = 2
 
     const next = () => {
-        if (document.querySelector(".left-hide")) {
-            let leftElem =  document.querySelectorAll(".left-hide")[0];
+        if (slider.querySelector(".left-hide")) {
+            let leftElem = slider.querySelectorAll(".left-hide")[0];
             leftElem.classList.remove('left-hide')
             leftElem.classList.add('right-hide')
             leftElem.remove();
             slider.appendChild(leftElem);
         }
 
-        if (document.querySelector(".left")) {
-            document.querySelector(".left").classList.add("left-hide");
-            document.querySelector(".left").classList.remove('left')
+        if (slider.querySelector(".left")) {
+            slider.querySelector(".left").classList.add("left-hide");
+            slider.querySelector(".left").classList.remove('left')
         }
 
-        document.querySelector(".active").classList.add("left");
-        document.querySelector(".active").classList.remove("active--big");
-        document.querySelector(".active").classList.remove("active");
+        slider.querySelector(".active").classList.add("left");
+        slider.querySelector(".active").classList.remove("active--big");
+        slider.querySelector(".active").classList.remove("active");
       
-        document.querySelector(".right").classList.add("active");
-        document.querySelector(".right").classList.remove("right");
+        slider.querySelector(".right").classList.add("active");
+        slider.querySelector(".right").classList.remove("right");
 
-        document.querySelectorAll(".right-hide")[0].classList.add("right");
-        document.querySelectorAll(".right-hide")[0].classList.remove("right-hide");
+        slider.querySelectorAll(".right-hide")[0].classList.add("right");
+        slider.querySelectorAll(".right-hide")[0].classList.remove("right-hide");
     }
 
     const prew = () => {
@@ -41,23 +41,23 @@ document.addEventListener("DOMContentLoaded", () => {
             slider.insertBefore(rightElem, slider.firstChild);
         }
 
-        if (document.querySelector(".right")) {
-            document.querySelector(".right").classList.add("right-hide");
-            document.querySelector(".right").classList.remove('right')
+        if (slider.querySelector(".right")) {
+            slider.querySelector(".right").classList.add("right-hide");
+            slider.querySelector(".right").classList.remove('right')
         }
 
-        document.querySelector(".active").classList.add("right");
-        document.querySelector(".active").classList.remove("active--big");
-        document.querySelector(".active").classList.remove("active");
-      
-        document.querySelector(".left").classList.add("active");
-        document.querySelector(".left").classList.remove("left");
+        slider.querySelector(".active").classList.add("right");
+        slider.querySelector(".active").classList.remove("active--big");
+        slider.querySelector(".active").classList.remove("active");
 
-        let leftElems = document.querySelectorAll(".left-hide");
+        slider.querySelector(".left").classList.add("active");
+        slider.querySelector(".left").classList.remove("left");
+
+        let leftElems = slider.querySelectorAll(".left-hide");
         leftElems[leftElems.length- 1].classList.add("left");
         leftElems[leftElems.length- 1].classList.remove("left-hide");
     }
-  
+
     const updateParentHeight = () => {
         if(items[0]) {
             let position = items[0].getBoundingClientRect();
