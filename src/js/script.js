@@ -88,10 +88,7 @@ function addError(messages, error) {
 function showErrorsForInput(input, errors) {
   let formGroup = closestParent(input.parentNode, 'form-group');
   if(null === formGroup) {
-    console.log(input)
-    console.log('reset group')
     formGroup = closestParent(input.parentNode, 'form-check');
-    console.log(formGroup);
   }
   if(formGroup) {
     let messages = formGroup.querySelector('.messages');
@@ -117,21 +114,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMOdalButton = modal.querySelector(`.close`);
     const backdrop = document.createElement('DIV')
     backdrop.classList.add('modal-backdrop','fade','show')
-
     const inputs = form.elements
-    console.log(inputs)
+
     for (let i = 0; i < inputs.length; ++i) {
       inputs.item(i).addEventListener('change', function(e) {
         let errors = validate(form, constraints) || {};
         showErrorsForInput(this, errors[this.name]);
       });
     }
-
+/*
     form.addEventListener('submit', (e) => {
-        e.preventDefault()
         let errors = validate(form, constraints) || {};
-        console.log(errors)
         if(errors) {
+          e.preventDefault()
           showErrors(form, errors || {});
         }
         if(modal) {
@@ -140,8 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add(`modal-open`)
             document.body.appendChild(backdrop)
         }
+        console.log('T ^^^ 666 T')
     });
-
+*/
     closeMOdalButton.addEventListener('click', ()=> {
         modal.classList.remove('show')
         modal.removeAttribute('style')
