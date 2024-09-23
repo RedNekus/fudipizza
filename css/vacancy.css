@@ -30,7 +30,6 @@
 }
 .vacancy-grid__city {
   position: absolute;
-  z-index: 1;
   left: 12px;
   top: 12px;
   background: #FFC935;

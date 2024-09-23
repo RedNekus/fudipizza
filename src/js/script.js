@@ -122,22 +122,29 @@ document.addEventListener("DOMContentLoaded", () => {
         showErrorsForInput(this, errors[this.name]);
       });
     }
-/*
-    form.addEventListener('submit', (e) => {
-        let errors = validate(form, constraints) || {};
-        if(errors) {
-          e.preventDefault()
-          showErrors(form, errors || {});
-        }
+
+    AjaxForm.Message.success = function() {};
+
+    $(document).on('af_complete', function (e, res) {
         if(modal) {
-            modal.classList.add(`show`)
-            modal.style.display = 'block'
-            document.body.classList.add(`modal-open`)
-            document.body.appendChild(backdrop)
+          modal.classList.add(`show`)
+          modal.style.display = 'block'
+          document.body.classList.add(`modal-open`)
+          document.body.appendChild(backdrop)
         }
-        console.log('T ^^^ 666 T')
     });
-*/
+
+    form.addEventListener('submit', (e) => {
+      let errors = validate(form, constraints) || null;
+      if(errors) {
+        afValidated = false
+        e.preventDefault()
+        showErrors(form, errors || {});
+      } else {
+        afValidated = true;
+      }
+    });
+
     closeMOdalButton.addEventListener('click', ()=> {
         modal.classList.remove('show')
         modal.removeAttribute('style')
@@ -151,12 +158,13 @@ document.addEventListener("DOMContentLoaded", () => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault()
         
-        const blockID = anchor.getAttribute('href').substr(1)
-        
-        document.getElementById(blockID).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
+        const blockID = anchor.getAttribute('href')?.substr(1)
+        if(blockID && null !== document.getElementById(blockID)) {
+          document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
       })
     }
 })
