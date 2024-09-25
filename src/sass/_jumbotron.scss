@@ -1,39 +1,41 @@
 .jumbotron {
-  & > .container {
-    padding: 110px;
-    height: 800px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  &__content {
-    max-width: 610px;
-  }
-  &__title {
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    & > * {
-      margin-top: .5em;
-      display: inline-block;
+  @media (min-width: $breakpoint-tablet) {
+    & > .container {
+      padding: 110px;
+      height: 800px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
     }
-    & > p {
-      margin-bottom: 0;
+    &__content {
+      max-width: 610px;
     }
-  }
-  &__image {
-    position: absolute;
-    right: 0;
-    bottom: -5px;
-  }
-  &__button {
-    height: 88px;
-    min-width: 380px;
-    font-size: 23px;
-    text-decoration: inherit;
-    color: inherit;
-    &:hover {
+    &__title {
+      text-transform: uppercase;
+      margin-bottom: 60px;
+      & > * {
+        margin-top: .5em;
+        display: inline-block;
+      }
+      & > p {
+        margin-bottom: 0;
+      }
+    }
+    &__image {
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+    }
+    &__button {
+      height: 88px;
+      min-width: 380px;
+      font-size: 23px;
+      text-decoration: inherit;
       color: inherit;
+      &:hover {
+        color: inherit;
+      }
     }
   }
 }

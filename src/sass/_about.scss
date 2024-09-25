@@ -1,31 +1,33 @@
-.about {
-    &__list {
-        display: flex;
-        justify-content: space-between;
-    }
-    &__item {
-        flex-basis: 380px;
-    }
-    &__image {
-        overflow: hidden;
-        border-radius: 50px;
-        max-width: 380px;
-        width: 100%;
-        aspect-ratio: 190/149;
-        position: relative;
-    }
-    &__title {
-        text-transform: uppercase;
-        text-align: center;
-        padding: 70px;
-    }
-    &__item-title {
-        font-family: 'FuturaDemiC';
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 23px;
-    }
-    &__body {
-        text-align: center;
+@media (min-width: $breakpoint-tablet) {
+    .about {
+        &__list {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__item {
+            flex-basis: 380px;
+        }
+        &__image {
+            overflow: hidden;
+            border-radius: 50px;
+            max-width: 380px;
+            width: 100%;
+            aspect-ratio: 190/149;
+            position: relative;
+        }
+        &__title {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 70px;
+        }
+        &__item-title {
+            font-family: 'FuturaDemiC';
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 23px;
+        }
+        &__body {
+            text-align: center;
+        }
     }
 }

@@ -1,42 +1,44 @@
 .offers {
-    & > .container {
-        padding: 110px;
-        position: relative;
-    }
-    &__wrap {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 80px;
-    }
-    &__block {
-        background: linear-gradient(180deg, #FF791F 0%, #FFA51F 63.28%, #FFE178 136.08%);
-        box-shadow: 6px 6px 27px rgba(0, 0, 0, 0.15);
-        border-radius: 50px; 
-        width: 280px;
-        height: 234px;
-        padding: 24px;
-        box-sizing: border-box;
-        display: grid;
-        grid-template-rows: auto 1fr;
-    }
+    @media (min-width: $breakpoint-tablet) {
+        & > .container {
+            padding: 110px;
+            position: relative;
+        }
+        &__wrap {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 80px;
+        }
+        &__block {
+            background: linear-gradient(180deg, #FF791F 0%, #FFA51F 63.28%, #FFE178 136.08%);
+            box-shadow: 6px 6px 27px rgba(0, 0, 0, 0.15);
+            border-radius: 50px; 
+            width: 280px;
+            height: 234px;
+            padding: 24px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
 
-    &__blocks {
-       display: grid;
-       gap: 24px;
-       grid-template-columns: 1fr 1fr;
-    }
-    &__title {
-        text-transform: uppercase;
-        margin-bottom: 40px;
-    }
-    &__title-item {
-        text-transform: uppercase;
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        a:hover {
-            text-decoration: underline;
+        &__blocks {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr 1fr;
+        }
+        &__title {
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        &__title-item {
+            text-transform: uppercase;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            a:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
