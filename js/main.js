@@ -18468,7 +18468,7 @@
 
 },{}],3:[function(require,module,exports){
 const validate = require("validate.js")
-const _ = require('lodash');
+const _ = require('lodash')
 const constraints = {
   firstname: {
     presence: {
@@ -18584,6 +18584,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const backdrop = document.createElement('DIV')
     backdrop.classList.add('modal-backdrop','fade','show')
     const inputs = form.elements
+    const mobMenu = document.querySelector('[JS_menu]')
+    mobMenu.addEventListener('click', () => {
+      console.log('click!!!')
+    })
 
     for (let i = 0; i < inputs.length; ++i) {
       inputs.item(i).addEventListener('change', function(e) {
@@ -18591,17 +18595,19 @@ document.addEventListener("DOMContentLoaded", () => {
         showErrorsForInput(this, errors[this.name]);
       });
     }
-
-    AjaxForm.Message.success = function() {};
-
-    $(document).on('af_complete', function (e, res) {
+    if('undefined' !== typeof AjaxForm) {
+      AjaxForm.Message.success = function() {};
+    }
+    if('undefined' !== typeof $) {
+      $(document).on('af_complete', function (e, res) {
         if(modal) {
           modal.classList.add(`show`)
           modal.style.display = 'block'
           document.body.classList.add(`modal-open`)
           document.body.appendChild(backdrop)
         }
-    });
+      });
+    }
 
     form.addEventListener('submit', (e) => {
       let errors = validate(form, constraints) || null;
@@ -18626,7 +18632,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let anchor of anchors) {
       anchor.addEventListener('click', function (e) {
         e.preventDefault()
-        
+
         const blockID = anchor.getAttribute('href')?.substr(1)
         if(blockID && null !== document.getElementById(blockID)) {
           document.getElementById(blockID).scrollIntoView({

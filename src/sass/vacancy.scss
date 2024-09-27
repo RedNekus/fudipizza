@@ -1,3 +1,7 @@
+$breakpoint-tablet:768px;
+$breakpoint-mobile:576px;
+$breakpoint-lg:992px;
+$breakpoint-xl:1200px;
 .vacancy {
     @media (min-width: $breakpoint-tablet) {
         &-grid {

@@ -1,6 +1,8 @@
 :root {
   --orange: #FB5F19;
   --yellow: #FFE60A;
+  --orange-light: #FEF6F1;
+  --red: #FF0101;
 }
 
 body {
@@ -44,8 +46,17 @@ strong {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 110px;
   box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 110px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
 }
 
 .orange-text {
@@ -139,28 +150,55 @@ header nav {
   position: relative;
   z-index: 2;
 }
-.header-nav__list {
-  display: flex;
-  align-items: center;
+@media screen and (min-width: 768px) {
+  .header-nav__mobile {
+    display: none;
+  }
 }
-.header-nav__list li {
-  font-weight: 500;
-  margin: 0 10px;
+@media screen and (max-width: 768px) {
+  .header-nav__mobile {
+    cursor: pointer;
+  }
 }
-.header-nav__list li a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
+@media screen and (max-width: 768px) {
+  .header-nav__list {
+    display: none;
+  }
 }
-.header-nav__list li a:hover {
-  color: #FB5F19;
+@media screen and (min-width: 768px) {
+  .header-nav__list {
+    display: flex;
+    align-items: center;
+  }
+  .header-nav__list li {
+    font-weight: 500;
+    margin: 0 10px;
+  }
+  .header-nav__list li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+  }
+  .header-nav__list li a:hover {
+    color: #FB5F19;
+  }
 }
 .header-nav__phone {
   font-weight: 700;
 }
+@media screen and (max-width: 768px) {
+  .header-nav__phone {
+    font-size: 12px;
+  }
+}
 .header-nav__phone a {
   text-decoration: none;
   color: inherit;
+}
+@media screen and (max-width: 768px) {
+  .header-nav__phone a {
+    white-space: nowrap;
+  }
 }
 
 .logo {
@@ -172,12 +210,22 @@ header nav {
   width: 100px;
   aspect-ratio: 1/1;
 }
+@media screen and (max-width: 768px) {
+  .logo__img {
+    width: 32px;
+  }
+}
 .logo__img img {
   max-width: 100%;
 }
 .logo__text {
   font-size: 35px;
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .logo__text {
+    font-size: 12px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -433,10 +481,6 @@ header nav {
     height: 70px;
     padding: 0 30px;
     box-sizing: border-box;
-  }
-  :root {
-    --orange-light: #FEF6F1;
-    --red: #FF0101;
   }
   .poll > .container {
     padding: 110px;

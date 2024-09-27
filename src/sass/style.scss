@@ -1,10 +1,13 @@
-$breakpoint-tablet: 768px;
+$breakpoint-tablet:768px;
 $breakpoint-mobile:576px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-lg:992px;
+$breakpoint-xl:1200px;
+
 :root {
   --orange: #FB5F19;
   --yellow: #FFE60A;
+  --orange-light: #FEF6F1;
+  --red: #FF0101;
 }
 body {
   font-family: 'FuturaBookC';
@@ -40,8 +43,13 @@ strong {
 .container {
   max-width: 1440px;
   margin:  0 auto;
-  padding: 0 110px;
   box-sizing: border-box;
+  @media screen and (min-width: $breakpoint-tablet) {
+    padding: 0 110px;
+  }
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding: 0 10px;
+  }
 }
 .orange-text {
   color: var(--orange);

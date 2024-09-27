@@ -1,72 +1,74 @@
-.vacancy-grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto 1fr;
-  gap: 20px;
-  margin-top: 40px;
-  justify-content: space-between;
-}
-.vacancy-grid__job {
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-.vacancy-grid__title {
-  font-weight: 700;
-  font-size: 23px;
-  line-height: 23px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.vacancy-grid__item {
-  background: #FFFFFF;
-  box-shadow: 6px 6px 27.6px rgba(0, 0, 0, 0.15);
-  border-radius: 50px;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 27px;
-  position: relative;
-  max-width: 580px;
-}
-.vacancy-grid__item-inner {
-  padding: 25px;
-}
-.vacancy-grid__city {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  background: #FFC935;
-  box-shadow: 0px 4px 11.2px rgba(0, 0, 0, 0.15);
-  border-radius: 100px;
-  min-width: 205px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 23px;
-}
-.vacancy-grid__picture {
-  border-radius: 50px 50px 0 0;
-  overflow: hidden;
-  max-height: 540px;
-}
-.vacancy-grid__picture:last-child {
-  max-height: fit-content;
-  border-radius: 50px;
-  display: flex;
-}
-.vacancy-grid__list li {
-  display: flex;
-  font-size: 22px;
-  line-height: 32px;
-}
-.vacancy-grid__list li:nth-last-child(n+2) {
-  margin-bottom: 20px;
-}
-.vacancy-grid__list li::before {
-  content: url("data:image/svg+xml,%3Csvg%20width%3D%2244%22%20height%3D%2231%22%20viewBox%3D%220%200%2044%2031%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M9.82534%2012.6431L19.3659%2021.5681C21.06%2023.1529%2021.055%2025.8418%2019.355%2027.4203L18.1844%2028.5073C16.6652%2029.918%2014.32%2029.9342%2012.7815%2028.5446L3.12318%2019.8209C1.42457%2018.2867%201.35739%2015.6426%202.9759%2014.0241L4.26428%2012.7357C5.7897%2011.2103%208.24995%2011.1693%209.82534%2012.6431Z%22%20fill%3D%22%23FFD0B2%22%2F%3E%0A%3Cpath%20d%3D%22M40.2729%209.42827L18.9192%2028.8048C17.5113%2030.0823%2015.3988%2030.1924%2013.8657%2029.0682L12.9065%2028.3648C10.8803%2026.8789%2010.7097%2023.9146%2012.5522%2022.2061L33.7783%202.52372C35.3133%201.10042%2037.686%201.10125%2039.2199%202.52562L40.3068%203.53486C42.0244%205.1298%2042.0088%207.85316%2040.2729%209.42827Z%22%20fill%3D%22%23FB5F19%22%2F%3E%0A%3C%2Fsvg%3E");
-  margin-right: 12px;
-}
-.vacancy__title {
-  text-transform: uppercase;
+@media (min-width: 768px) {
+  .vacancy-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+  .vacancy-grid__job {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .vacancy-grid__title {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 23px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .vacancy-grid__item {
+    background: #FFFFFF;
+    box-shadow: 6px 6px 27.6px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    position: relative;
+    max-width: 580px;
+  }
+  .vacancy-grid__item-inner {
+    padding: 25px;
+  }
+  .vacancy-grid__city {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: #FFC935;
+    box-shadow: 0px 4px 11.2px rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    min-width: 205px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 23px;
+  }
+  .vacancy-grid__picture {
+    border-radius: 50px 50px 0 0;
+    overflow: hidden;
+    max-height: 540px;
+  }
+  .vacancy-grid__picture:last-child {
+    max-height: fit-content;
+    border-radius: 50px;
+    display: flex;
+  }
+  .vacancy-grid__list li {
+    display: flex;
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .vacancy-grid__list li:nth-last-child(n+2) {
+    margin-bottom: 20px;
+  }
+  .vacancy-grid__list li::before {
+    content: url("data:image/svg+xml,%3Csvg%20width%3D%2244%22%20height%3D%2231%22%20viewBox%3D%220%200%2044%2031%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M9.82534%2012.6431L19.3659%2021.5681C21.06%2023.1529%2021.055%2025.8418%2019.355%2027.4203L18.1844%2028.5073C16.6652%2029.918%2014.32%2029.9342%2012.7815%2028.5446L3.12318%2019.8209C1.42457%2018.2867%201.35739%2015.6426%202.9759%2014.0241L4.26428%2012.7357C5.7897%2011.2103%208.24995%2011.1693%209.82534%2012.6431Z%22%20fill%3D%22%23FFD0B2%22%2F%3E%0A%3Cpath%20d%3D%22M40.2729%209.42827L18.9192%2028.8048C17.5113%2030.0823%2015.3988%2030.1924%2013.8657%2029.0682L12.9065%2028.3648C10.8803%2026.8789%2010.7097%2023.9146%2012.5522%2022.2061L33.7783%202.52372C35.3133%201.10042%2037.686%201.10125%2039.2199%202.52562L40.3068%203.53486C42.0244%205.1298%2042.0088%207.85316%2040.2729%209.42827Z%22%20fill%3D%22%23FB5F19%22%2F%3E%0A%3C%2Fsvg%3E");
+    margin-right: 12px;
+  }
+  .vacancy__title {
+    text-transform: uppercase;
+  }
 }
