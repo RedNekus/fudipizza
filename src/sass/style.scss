@@ -5,14 +5,18 @@ $breakpoint-xl:1200px;
 
 :root {
   --orange: #FB5F19;
-  --yellow: #FFE60A;
+  --orange-mid: #FFD0B2;
   --orange-light: #FEF6F1;
+  --yellow: #FFE60A;
+  --yellow-mid: #FFC935;
   --red: #FF0101;
 }
 body {
   font-family: 'FuturaBookC';
   overflow-x: hidden;
   font-size: 23px;
+  margin: 0;
+  padding: 0;
 }
 ul {
   padding: 0;
@@ -92,14 +96,20 @@ strong {
   }
 }
 .title-h1 {
-  font-size: 65px;
+  font-size: 23px;
   line-height: 1.4;
+  @media screen and (min-width: $breakpoint-tablet) {
+    font-size: 65px;
+  }
 }
 .title-h2 {
-  font-size: 45px;
+  font-size: 20px;
   line-height: 1.4;
   font-weight: 700;
   font-family: 'FuturaDemiC';
+  @media screen and (min-width: $breakpoint-tablet) {
+    font-size: 45px;
+  }
 }
 .is-hidden {
   display: none;

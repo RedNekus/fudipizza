@@ -65,9 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
             slider.parentElement.style.height = (position.height * 1.25 + title.offsetHeight + blockDots.offsetHeight + 160) + 'px'
         }
     }
-    window.onload = updateParentHeight
-    window.addEventListener('resize', updateParentHeight)
-    //let mid = parseInt(items.length/2)
+    console.log(window.innerWidth)
+    if(window.innerWidth >= 768) {
+        window.onload = updateParentHeight
+    }
+    window.addEventListener('resize', () => {
+        if(window.innerWidth >= 768) {
+            updateParentHeight()
+        }
+    })
     items[2].classList.add(`active`)
     dots[2].classList.add(`active`)
     if(null !== dots && dots.length > 0) {

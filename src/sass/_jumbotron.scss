@@ -1,4 +1,12 @@
 .jumbotron {
+  &__title {
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: $breakpoint-tablet){
+    &__title {
+      text-align: center;
+    }
+  }
   @media (min-width: $breakpoint-tablet) {
     & > .container {
       padding: 110px;
@@ -12,7 +20,6 @@
       max-width: 610px;
     }
     &__title {
-      text-transform: uppercase;
       margin-bottom: 60px;
       & > * {
         margin-top: .5em;

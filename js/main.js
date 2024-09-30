@@ -18580,13 +18580,17 @@ function showErrors(form, errors) {
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById(`poll-form`)
     const modal = document.getElementById(`poll-modal`)
-    const closeMOdalButton = modal.querySelector(`.close`);
+    const closeMOdalButton = modal.querySelector(`.close`)
     const backdrop = document.createElement('DIV')
     backdrop.classList.add('modal-backdrop','fade','show')
     const inputs = form.elements
     const mobMenu = document.querySelector('[JS_menu]')
+    const mobMenuButton = mobMenu.querySelector('[JS_menu__button]')
+    const menu = document.querySelector('.header-nav__list')
     mobMenu.addEventListener('click', () => {
-      console.log('click!!!')
+      mobMenuButton.classList.toggle('is-open')
+      menu.classList.toggle('is-show')
+      document.body.classList.toggle('is-fixed');
     })
 
     for (let i = 0; i < inputs.length; ++i) {

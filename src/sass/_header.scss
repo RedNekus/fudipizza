@@ -1,3 +1,7 @@
+body.is-fixed {
+  position: fixed;
+  width: 100%;
+}
 header {
     & > .container {
       display: flex;
@@ -13,6 +17,7 @@ header {
     font-size: 20px;
     position: relative;
     z-index: 2;
+    gap: 1rem;;
 
     &__mobile {
       @media screen and (min-width: $breakpoint-tablet) {
@@ -20,12 +25,70 @@ header {
       }
       @media screen and (max-width: $breakpoint-tablet) {
         cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+    }
+    &__menu {
+      display: inline-flex;
+      align-items: center;
+      width: 17px;
+      justify-content: end;
+      &::after {
+        width: 17px;
+        height: 14px;
+        display: inline-flex;
+        content: url("data:image/svg+xml,%3Csvg%20width%3D%2217%22%20height%3D%2214%22%20viewBox%3D%220%200%2017%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2217%22%20height%3D%222%22%20rx%3D%221%22%20fill%3D%22%23FF791F%22%2F%3E%0A%3Crect%20y%3D%2212%22%20width%3D%2217%22%20height%3D%222%22%20rx%3D%221%22%20fill%3D%22%23FF791F%22%2F%3E%0A%3Crect%20x%3D%227%22%20y%3D%226%22%20width%3D%2210%22%20height%3D%222%22%20rx%3D%221%22%20fill%3D%22%23FF791F%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+      &.is-open::after {
+        width: 14px;
+        content: url("data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M13.1251%200.875026C12.6419%200.391758%2011.8584%200.391712%2011.3751%200.874923L6.99938%205.25L2.62484%200.875077C2.14161%200.391797%201.35808%200.391798%200.874846%200.875077C0.391669%201.3583%200.391669%202.1417%200.874845%202.62492L5.24954%207L0.874845%2011.3751C0.391668%2011.8583%200.391669%2012.6417%200.874846%2013.1249C1.35808%2013.6082%202.14161%2013.6082%202.62485%2013.1249L6.99938%208.75L11.3751%2013.1251C11.8584%2013.6083%2012.6419%2013.6082%2013.1251%2013.125C13.6083%2012.6417%2013.6083%2011.8583%2013.1251%2011.375L8.75046%207L13.1251%202.62497C13.6083%202.14173%2013.6083%201.35827%2013.1251%200.875026Z%22%20fill%3D%22%23FB5F19%22%2F%3E%0A%3C%2Fsvg%3E");
       }
     }
 
     &__list {
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:hover {
+          color: var(--orange);
+          &::after {
+            padding-left: .3rem;
+            content: url("data:image/svg+xml,%3Csvg%20width%3D%226%22%20height%3D%2210%22%20viewBox%3D%220%200%206%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1%209L5%205L1%201%22%20stroke%3D%22%23FB5F19%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+            @media screen and (min-width: $breakpoint-tablet) {
+              position: absolute;
+              right: 0;
+              transform: translate(100%, -2px);
+            }
+          }
+        }
+      }
       @media screen and (max-width: $breakpoint-tablet) {
-        display: none;
+        position: absolute;
+        top: -250%;
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+        background-color: #FFF;
+        width: 100%;
+        padding: 40px 10px;
+        margin: 0 -10px;
+        height: 0;
+        transition: all .7s ease-out;
+        overflow: hidden;
+        opacity: 0;
+        li {
+          line-height: 30px;
+        }
+        &.is-show {
+          opacity: 1;
+          height: 100vh;
+          top: 100%;
+        }
       }
       @media screen and (min-width: $breakpoint-tablet) {
         display: flex;
@@ -33,14 +96,6 @@ header {
         li {
           font-weight: 500;
           margin: 0 10px;
-          a {
-            text-transform: uppercase;
-            text-decoration: none;
-            color: inherit;
-            &:hover {
-              color: #FB5F19;
-            }
-          }
         }
       }
     }
@@ -48,6 +103,8 @@ header {
       font-weight: 700;
       @media screen and (max-width: $breakpoint-tablet) {
         font-size: 12px;
+        flex-basis: 100%;
+        text-align: right;
       }
       a {
         text-decoration: none;
@@ -75,6 +132,7 @@ header {
     &__text {
       font-size: 35px;
       font-weight: bold;
+      white-space: nowrap;
       @media screen and (max-width: $breakpoint-tablet) {
         font-size: 12px;
       }
