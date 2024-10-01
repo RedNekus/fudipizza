@@ -141,6 +141,17 @@ strong {
   opacity: 1;
 }
 
+.dot {
+  display: inline-block;
+  background: var(--orange-mid);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active, .dot:hover {
+  background: var(--orange);
+}
+
 @keyframes animate-gradient {
   0% {
     left: -200%;
@@ -306,9 +317,27 @@ header nav {
 .jumbotron__title {
   text-transform: uppercase;
 }
+.jumbotron__button {
+  --height: 88px;
+  --width: 380px;
+  --font-size: 23px;
+  height: var(--height);
+  min-width: var(--width);
+  font-size: var(--font-size);
+  text-decoration: inherit;
+  color: inherit;
+}
+.jumbotron__button:hover {
+  color: inherit;
+}
 @media screen and (max-width: 768px) {
   .jumbotron__title {
     text-align: center;
+  }
+  .jumbotron__button {
+    --height: 52px;
+    --width: 100%;
+    --font-size: 18px;
   }
 }
 @media (min-width: 768px) {
@@ -337,16 +366,6 @@ header nav {
     position: absolute;
     right: 0;
     bottom: -5px;
-  }
-  .jumbotron__button {
-    height: 88px;
-    min-width: 380px;
-    font-size: 23px;
-    text-decoration: inherit;
-    color: inherit;
-  }
-  .jumbotron__button:hover {
-    color: inherit;
   }
 }
 
@@ -439,16 +458,8 @@ header nav {
   left: 50%;
 }
 .jobs__dot {
-  display: inline-block;
-  background: var(--orange-mid);
   width: 18px;
   height: 18px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.jobs__dot.active {
-  background: var(--orange);
 }
 .jobs__item {
   --width: 380px;
@@ -519,79 +530,145 @@ header nav {
   }
 }
 
-@media (min-width: 768px) {
+.offers > .container {
+  --padding: 110px;
+  padding: var(--padding);
+  position: relative;
+}
+.offers__block {
+  --width: 280px;
+  --height: 234px;
+  --border-radius: 50px;
+  --padding: 24px;
+  background: linear-gradient(180deg, #FF791F 0%, #FFA51F 63.28%, #FFE178 136.08%);
+  box-shadow: 6px 6px 27px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  width: var(--width);
+  height: var(--height);
+  padding: var(--padding);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.offers__blocks {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+}
+.offers__title {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.offers__title-item {
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+.offers__title-item a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
   .offers > .container {
-    padding: 110px;
-    position: relative;
+    --padding: 10px;
   }
+  .offers__block {
+    --width: 100%;
+    --height: 117px;
+    --border-radius: 25px;
+    --padding: 12px;
+  }
+  .offers__image {
+    height: min-content;
+    width: fit-content;
+  }
+  .offers__image img {
+    max-height: 50%;
+    max-width: 50%;
+  }
+  .offers__title-item {
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) {
   .offers__wrap {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 80px;
   }
-  .offers__block {
-    background: linear-gradient(180deg, #FF791F 0%, #FFA51F 63.28%, #FFE178 136.08%);
-    box-shadow: 6px 6px 27px rgba(0, 0, 0, 0.15);
-    border-radius: 50px;
-    width: 280px;
-    height: 234px;
-    padding: 24px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-rows: auto 1fr;
+}
+
+.about {
+  --width: 380px;
+}
+.about__wrap {
+  overflow: hidden;
+}
+.about__list {
+  left: 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  transition: left 0.5s ease-in-out;
+}
+.about__item {
+  flex-basis: var(--width);
+  flex-shrink: 0;
+}
+.about__image {
+  --border-radius: 50px;
+  --ratio: 190/149;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  max-width: var(--width);
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  position: relative;
+}
+.about__title {
+  --padding: 70px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--padding);
+}
+.about__item-title {
+  --font-size: 23px;
+  font-family: "FuturaDemiC";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: var(--font-size);
+}
+.about__body {
+  text-align: center;
+}
+.about__dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.about__dot {
+  width: 18px;
+  height: 18px;
+}
+@media (min-width: 768px) {
+  .about__dots {
+    display: none;
   }
-  .offers__blocks {
-    display: grid;
-    gap: 24px;
-    grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .about {
+    --width: 100%;
   }
-  .offers__title {
-    text-transform: uppercase;
-    margin-bottom: 40px;
+  .about__list {
+    gap: 10px;
   }
-  .offers__title-item {
-    text-transform: uppercase;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-  }
-  .offers__title-item a:hover {
-    text-decoration: underline;
+  .about__image {
+    --border-radius: 25px;
+    --ratio: 60/47;
   }
 }
 
-@media (min-width: 768px) {
-  .about__list {
-    display: flex;
-    justify-content: space-between;
-  }
-  .about__item {
-    flex-basis: 380px;
-  }
-  .about__image {
-    overflow: hidden;
-    border-radius: 50px;
-    max-width: 380px;
-    width: 100%;
-    aspect-ratio: 190/149;
-    position: relative;
-  }
-  .about__title {
-    text-transform: uppercase;
-    text-align: center;
-    padding: 70px;
-  }
-  .about__item-title {
-    font-family: "FuturaDemiC";
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 23px;
-  }
-  .about__body {
-    text-align: center;
-  }
-}
 .form-select, .form-control {
   --font-size: 23px;
   --border-radius: 20px;
@@ -738,17 +815,6 @@ header nav {
   }
 }
 
-footer .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 20px;
-}
-footer .grid-col__apps {
-  margin-top: 40px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
-}
 footer .grid-text__content {
   font-size: 20px;
 }
@@ -825,6 +891,19 @@ footer .grid-socials__link.fb::before {
 }
 footer .grid-socials__link.vk::before {
   content: url("data:image/svg+xml,%3Csvg%20width%3D%2234%22%20height%3D%2234%22%20viewBox%3D%220%200%2034%2034%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M28.9798%209.65898H24.7607C24.5884%209.65898%2024.4195%209.70645%2024.2717%209.79634C24.1239%209.88623%2024.0028%2010.0152%2023.9214%2010.1695C23.9214%2010.1695%2022.2387%2013.3205%2021.6981%2014.3818C20.244%2017.2369%2019.3024%2016.3406%2019.3024%2015.0155V10.4467C19.3024%2010.0649%2019.1532%209.69871%2018.8877%209.42874C18.6222%209.15878%2018.2621%209.00711%2017.8866%209.00711H14.7144C14.2824%208.97445%2013.8493%209.05463%2013.4564%209.24003C13.0634%209.42542%2012.7236%209.70989%2012.4692%2010.0664C12.4692%2010.0664%2014.08%209.80158%2014.08%2012.0084C14.08%2012.5556%2014.1077%2014.1299%2014.133%2015.4502C14.1378%2015.6448%2014.0837%2015.8362%2013.9781%2015.9985C13.8725%2016.1609%2013.7204%2016.2863%2013.5425%2016.358C13.3645%2016.4297%2013.1692%2016.4442%2012.9829%2016.3994C12.7966%2016.3546%2012.6283%2016.2528%2012.5007%2016.1077C11.2023%2014.2715%2010.1267%2012.2826%209.29747%2010.1841C9.22626%2010.0271%209.11225%209.89423%208.96897%209.80115C8.8257%209.70807%208.65917%209.65873%208.48915%209.65898C7.57415%209.65898%205.74316%209.65898%204.6558%209.65898C4.55036%209.65825%204.44632%209.68356%204.35262%209.73273C4.25892%209.7819%204.17836%209.85347%204.11787%209.94128C4.05737%2010.0291%204.01874%2010.1305%204.00531%2010.2369C3.99187%2010.3432%204.00403%2010.4513%204.04073%2010.5518C5.20472%2013.7981%2010.2188%2024%2015.9419%2024H18.3508C18.6031%2024%2018.8452%2023.898%2019.0237%2023.7166C19.2021%2023.5351%2019.3024%2023.289%2019.3024%2023.0324V21.5534C19.3024%2021.3679%2019.3558%2021.1864%2019.456%2021.0314C19.5562%2020.8763%2019.6988%2020.7545%2019.8662%2020.6808C20.0337%2020.6071%2020.2187%2020.5849%2020.3985%2020.6168C20.5782%2020.6488%2020.7448%2020.7335%2020.8778%2020.8605L23.761%2023.6149C24.02%2023.8623%2024.3619%2024%2024.7172%2024H28.5034C30.3295%2024%2030.3295%2022.7116%2029.3338%2021.7146C28.6332%2021.013%2026.1048%2018.3033%2026.1048%2018.3033C25.8883%2018.0752%2025.7591%2017.7759%2025.7407%2017.4595C25.7223%2017.143%2025.8158%2016.8303%2026.0043%2016.5779C26.8216%2015.4844%2028.1583%2013.6943%2028.7252%2012.9275C29.5001%2011.8794%2030.9025%209.65898%2028.9798%209.65898Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+@media (min-width: 768px) {
+  footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 20px;
+  }
+  footer-col__apps {
+    margin-top: 40px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .modal {

@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const title = document.querySelector(`.jobs__title`)
     const slider = document.querySelector(`[JS_Slider]`)
-    let blockDots = document.querySelector(`.jobs__dots`)
+    const blockDots = document.querySelector(`.jobs__dots`)
+    const mobSlider = document.querySelector(`[JS_MobileSlider]`)
+    const mobDotsBlock = document.querySelector(`.about__dots`)
     let dots = blockDots.children
     let items = slider.children
-    let title = document.querySelector(`.jobs__title`)
     let activeIndex = 2
 
     const next = () => {
@@ -65,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             slider.parentElement.style.height = (position.height * 1.25 + title.offsetHeight + blockDots.offsetHeight + 160) + 'px'
         }
     }
-    console.log(window.innerWidth)
+
     if(window.innerWidth >= 768) {
         window.onload = updateParentHeight
     }
@@ -104,6 +106,52 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             })
+        }
+    }
+
+    /* Мобильный слайдер */
+    if( null !== mobSlider && mobSlider.children.length) {
+        let offset = (mobSlider.scrollWidth - mobSlider.offsetWidth*(mobSlider.children.length)) / (mobSlider.children.length - 1)
+        let itemWidth = mobSlider.offsetWidth + offset
+
+        mobSlider.addEventListener('touchstart', (e) => {
+            let touchObj = e.changedTouches[0]
+            startX = touchObj.pageX
+            e.preventDefault()
+        }, false)
+
+        mobSlider.addEventListener('touchend', (e) => {
+            let touchObj = e.changedTouches[0]
+            let activeIndex = parseInt(mobDotsBlock.querySelector('.active')?.dataset.num)
+            let mod = Math.abs(startX - touchObj.pageX)
+            if(mod > 80) {
+                if(startX > touchObj.pageX) {
+                    if(activeIndex >= 1) {
+                        mobDotsBlock.children[activeIndex - 1].click()
+                    }
+                } else {
+                    if(activeIndex < mobDotsBlock.children.length - 1) {
+                        mobDotsBlock.children[activeIndex + 1].click()
+                    }
+                }
+            }
+            e.preventDefault()
+        }, false)
+
+        if(null !== mobDotsBlock && mobDotsBlock.children) {
+            mobDotsBlock.children[0].classList.add('active')
+            for (let mDot of mobDotsBlock.children) {
+                mDot.addEventListener('click', () => {
+                    if(!mDot.classList.contains('active')) {
+                        let currIndex = mDot.dataset.num
+                        Object.values(mobDotsBlock.children)
+                            .filter(item => item.classList.contains('active'))
+                            .map(item => item.classList.remove('active'))
+                        mDot.classList.add('active');
+                        mobSlider.style.left = -(currIndex * itemWidth) + 'px'
+                    }
+                })
+            } 
         }
     }
 })

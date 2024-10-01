@@ -2,9 +2,27 @@
   &__title {
     text-transform: uppercase;
   }
+  &__button {
+    --height: 88px;
+    --width: 380px;
+    --font-size: 23px;
+    height: var(--height);
+    min-width: var(--width);
+    font-size: var(--font-size);
+    text-decoration: inherit;
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
   @media screen and (max-width: $breakpoint-tablet){
     &__title {
       text-align: center;
+    }
+    &__button {
+      --height: 52px;
+      --width: 100%;
+      --font-size: 18px;
     }
   }
   @media (min-width: $breakpoint-tablet) {
@@ -33,16 +51,6 @@
       position: absolute;
       right: 0;
       bottom: -5px;
-    }
-    &__button {
-      height: 88px;
-      min-width: 380px;
-      font-size: 23px;
-      text-decoration: inherit;
-      color: inherit;
-      &:hover {
-        color: inherit;
-      }
     }
   }
 }

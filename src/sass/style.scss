@@ -121,6 +121,18 @@ strong {
 .fade.show {
   opacity: 1;
 }
+.dot {
+  display: inline-block;
+  background: var(--orange-mid);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+  &.active,
+  &:hover {
+      background: var(--orange);
+  }
+}
+
 @keyframes animate-gradient
 {
   0%{left:-200%}

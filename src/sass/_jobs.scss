@@ -88,16 +88,8 @@
         left: 50%;
     }
     &__dot {
-        display: inline-block;
-        background: var(--orange-mid);
         width: 18px;
         height: 18px;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        cursor: pointer;
-        &.active {
-            background: var(--orange);
-        }
     }
     &__item {
         --width: 380px;

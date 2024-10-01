@@ -1,33 +1,67 @@
-@media (min-width: $breakpoint-tablet) {
-    .about {
-        &__list {
-            display: flex;
-            justify-content: space-between;
+.about {
+    --width: 380px;
+    &__wrap {
+        overflow: hidden;
+    }
+    &__list {
+        left: 0;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        transition: left .5s ease-in-out;
+    }
+    &__item {
+        flex-basis: var(--width);
+        flex-shrink: 0;
+    }
+    &__image {
+        --border-radius: 50px;
+        --ratio: 190/149;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        max-width: var(--width);
+        width: 100%;
+        aspect-ratio: var(--ratio);
+        position: relative;
+    }
+    &__title {
+        --padding: 70px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: var(--padding);
+    }
+    &__item-title {
+        --font-size: 23px;
+        font-family: 'FuturaDemiC';
+        text-transform: uppercase;
+        text-align: center;
+        font-size: var(--font-size);
+    }
+    &__body {
+        text-align: center;
+    }
+    &__dots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+    &__dot {
+        width: 18px;
+        height: 18px;
+    }
+    @media (min-width: $breakpoint-tablet) {
+        &__dots {
+            display: none;
         }
-        &__item {
-            flex-basis: 380px;
+    }
+    @media (max-width: $breakpoint-tablet) {
+        --width: 100%;
+        &__list {
+            gap: 10px;
         }
         &__image {
-            overflow: hidden;
-            border-radius: 50px;
-            max-width: 380px;
-            width: 100%;
-            aspect-ratio: 190/149;
-            position: relative;
-        }
-        &__title {
-            text-transform: uppercase;
-            text-align: center;
-            padding: 70px;
-        }
-        &__item-title {
-            font-family: 'FuturaDemiC';
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 23px;
-        }
-        &__body {
-            text-align: center;
+            --border-radius: 25px;
+            --ratio: 60/47;
         }
     }
 }
