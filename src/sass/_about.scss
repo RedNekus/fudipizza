@@ -1,5 +1,9 @@
 .about {
     --width: 380px;
+    --padding: 110px;
+    & > .container {
+        padding: var(--padding);
+    }
     &__wrap {
         overflow: hidden;
     }
@@ -56,6 +60,10 @@
     }
     @media (max-width: $breakpoint-tablet) {
         --width: 100%;
+        --padding: 4px 10px 40px 10px;
+        &__title {
+            --padding: 36px;
+        }
         &__list {
             gap: 10px;
         }

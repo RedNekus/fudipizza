@@ -20,6 +20,7 @@
     }
 }
 .form {
+    --margin-top: 80px;
     $select:#{&}-select;
     &-control {
         @extend %input;
@@ -51,6 +52,9 @@
         position: relative;
         &#{$this}--bottom {
             margin-top: 80px;
+            @media (max-width: $breakpoint-tablet) {
+                margin-top: 50px; 
+            }
         }
         &.text-center {
             display: flex;
@@ -59,22 +63,37 @@
         &.is-invalid input,
         &.is-invalid #{$select}
         {
-            border-color: #FF0101;
-            color: #FF0101;
+            border-color: var(--red);
+            color: var(--red);
         }
         &.is-invalid #{$select}__wrap::after {
             content: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2216%22%20height%3D%2210%22%20viewBox%3D%220%200%2016%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1%201.5L8%208.5L15%201.5%22%20stroke%3D%22%23FF0101%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
         }
     }
     &-check {
-        margin-top: 32px;
+        --label-size: 35px;
+        --font-size: inherit;
+        --margin-top: 32px;
+        --check-size: 32px;
+        margin-top: var(--margin-top);
+        font-size: var(--font-size);
+        @media (max-width: $breakpoint-tablet) {
+            --label-size: 20px;
+            --font-size: 12px;
+            --check-size: 18px;
+        }
         &-input {
             position: absolute;
             z-index: -1;
             opacity: 0;
             &:checked + label::after {
-                content: url("data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M26.6666%209.3335L11.9999%2024.0002L5.33325%2017.3335%22%20stroke%3D%22%23FB5F19%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+                content: "";
+                background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M26.6666%209.3335L11.9999%2024.0002L5.33325%2017.3335%22%20stroke%3D%22%23FB5F19%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
                 position: absolute;
+                display:block;
+                height:var(--check-size);
+                width: var(--check-size);
+                background-size: var(--check-size) var(--check-size);
             }
             &:checked + label::before {
                 background-color: var(--orange-light);
@@ -87,8 +106,8 @@
             &::before {
                 content: "";
                 display: inline-block;
-                width: 35px;
-                height: 35px;
+                width: var(--label-size);
+                height: var(--label-size);
                 border: none;
                 border-radius: 7px;
                 margin-right: 50px;
@@ -105,30 +124,37 @@
 }
 
 .poll {
+    --padding: 110px;
+    --margin-bottom: 80px;
+    --btn-height: 88px;
+    --btn-width: 380px;
+
+    & > .container {
+        padding: var(--padding);
+        position: relative;
+    }
+    &__btn {
+        height: var(--btn-height);
+        min-width: var(--btn-width);
+    }
     &__title {
-        --margin-bottom: 80px;
         text-transform: uppercase;
         text-align: center;
         margin-bottom: var(--margin-bottom)
     }
     @media (max-width: $breakpoint-tablet) {
+        --padding: 10px;
+        --margin-bottom: 50px;
+        --btn-height: 52px;
+        --btn-width: 220px;
         .col-auto:not(:last-child) {
             margin-bottom: 12px;
         }
         .row {
-        margin-bottom: 12px; 
+            margin-bottom: 12px; 
         }
     }
     @media (min-width: $breakpoint-tablet) {
-        & > .container {
-            padding: 110px;
-            position: relative;
-        }
-        &__btn {
-            height: 88px;
-            min-width: 380px;
-            font-size: 23px;
-        }
         .row {
             display: flex;
             gap: 20px;
@@ -140,7 +166,7 @@
         }
         .messages.error {
             position: absolute;
-            color: #FF0101;
+            color: var(--red);
             z-index: 3;
             margin-top: 5px;
             p {

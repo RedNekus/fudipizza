@@ -10,11 +10,12 @@ $breakpoint-xl:1200px;
   --yellow: #FFE60A;
   --yellow-mid: #FFC935;
   --red: #FF0101;
+  --font-size: 23px;
 }
 body {
   font-family: 'FuturaBookC';
   overflow-x: hidden;
-  font-size: 23px;
+  font-size: var(--font-size);
   margin: 0;
   padding: 0;
 }
@@ -78,7 +79,6 @@ strong {
     overflow: hidden;
     & > span {
       position: relative;
-      z-index: 2;
     }
     &:before {
       content: "";
@@ -137,6 +137,11 @@ strong {
 {
   0%{left:-200%}
   to{left:100%}
+}
+@media screen and (max-width: $breakpoint-tablet) {
+  :root {
+    --font-size: 15px;
+  }
 }
 @import 'header';
 @import 'jumbotron';

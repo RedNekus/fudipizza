@@ -19,7 +19,8 @@ mixin slider(items)
                     h3.jobs__item-title
                         a(href=item.link)= item.text
                     .jobs__bottom
-                        button.jobs__button.btn.btn-orange.btn-blink  Подробнее
+                        button.jobs__button.btn.btn-orange.btn-blink
+                            span Подробнее
     - let n = 0;
     .jobs__dots
         while n < slider.length
