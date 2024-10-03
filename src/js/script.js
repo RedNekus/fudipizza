@@ -109,72 +109,108 @@ function showErrors(form, errors) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById(`poll-form`)
-    const modal = document.getElementById(`poll-modal`)
-    const closeMOdalButton = modal.querySelector(`.close`)
-    const backdrop = document.createElement('DIV')
-    backdrop.classList.add('modal-backdrop','fade','show')
-    const inputs = form.elements
-    const mobMenu = document.querySelector('[JS_menu]')
-    const mobMenuButton = mobMenu.querySelector('[JS_menu__button]')
-    const menu = document.querySelector('.header-nav__list')
-    mobMenu.addEventListener('click', () => {
-      mobMenuButton.classList.toggle('is-open')
-      menu.classList.toggle('is-show')
-      document.body.classList.toggle('is-fixed');
-    })
+  const headerBlock = document.getElementsByTagName('header')[0];
+  const form = document.getElementById(`poll-form`)
+  const modal = document.getElementById(`poll-modal`)
+  const closeMOdalButton = modal.querySelector(`.close`)
+  const backdrop = document.createElement('DIV')
+  backdrop.classList.add('modal-backdrop','fade','show')
+  const inputs = form.elements
+  const mobMenu = document.querySelector('[JS_menu]')
+  const mobMenuButton = mobMenu.querySelector('[JS_menu__button]')
+  const menu = document.querySelector('.header-nav__list')
+  let scrollPos = 0;
+  let offsetHeader = headerBlock.offsetHeight
 
-    for (let i = 0; i < inputs.length; ++i) {
-      inputs.item(i).addEventListener('change', function(e) {
-        let errors = validate(form, constraints) || {};
-        showErrorsForInput(this, errors[this.name]);
-      });
-    }
-    if('undefined' !== typeof AjaxForm) {
-      AjaxForm.Message.success = function() {};
-    }
-    if('undefined' !== typeof $) {
-      $(document).on('af_complete', function (e, res) {
-        if(modal) {
-          modal.classList.add(`show`)
-          modal.style.display = 'block'
-          document.body.classList.add(`modal-open`)
-          document.body.appendChild(backdrop)
-        }
-      });
-    }
+  window.addEventListener('resize', () => {
+    offsetHeader = headerBlock.offsetHeight
+  })
 
-    form.addEventListener('submit', (e) => {
-      let errors = validate(form, constraints) || null;
-      if(errors) {
-        afValidated = false
-        e.preventDefault()
-        showErrors(form, errors || {});
-      } else {
-        afValidated = true;
+  window.addEventListener('scroll', (e) => {
+    let newPos = window.scrollY || document.documentElement.scrollTop;
+    let isFixed = headerBlock.classList.contains('is-fixed') ?? false;
+    if (newPos > scrollPos) {
+      if(newPos > offsetHeader && !isFixed) {
+        headerBlock.classList.add('is-fixed')
       }
-    });
+    } else if (newPos < scrollPos) {
+      if(newPos < offsetHeader && isFixed) {
+        headerBlock.classList.remove('is-fixed')
+      }
+    }
+    scrollPos = newPos ?? 0
+  }, false);
 
-    closeMOdalButton.addEventListener('click', ()=> {
-        modal.classList.remove('show')
-        modal.removeAttribute('style')
-        document.body.classList.remove(`modal-open`)
-        document.body.removeChild(backdrop)
-    })
+  mobMenu.addEventListener('click', () => {
+    mobMenuButton.classList.toggle('is-open')
+    menu.classList.toggle('is-show')
+    document.body.classList.toggle('is-fixed');
+  })
 
-    const anchors = document.querySelectorAll('a[href*="#"]')
-
-    for (let anchor of anchors) {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault()
-
-        const blockID = anchor.getAttribute('href')?.substr(1)
-        if(blockID && null !== document.getElementById(blockID)) {
-          document.getElementById(blockID).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
-        }
+  if(menu.children.length) {
+    let menuItems = menu.children
+    for(let item of menuItems) {
+      let link = item.firstElementChild;
+      link.addEventListener('click', () => {
+        mobMenuButton.classList.remove('is-open')
+        menu.classList.remove('is-show')
+        document.body.classList.remove('is-fixed');
       })
     }
+  }
+
+
+
+  for (let i = 0; i < inputs.length; ++i) {
+    inputs.item(i).addEventListener('change', function(e) {
+      let errors = validate(form, constraints) || {};
+      showErrorsForInput(this, errors[this.name]);
+    });
+  }
+  if('undefined' !== typeof AjaxForm) {
+    AjaxForm.Message.success = function() {};
+  }
+  if('undefined' !== typeof $) {
+    $(document).on('af_complete', function (e, res) {
+      if(modal) {
+        modal.classList.add(`show`)
+        modal.style.display = 'block'
+        document.body.classList.add(`modal-open`)
+        document.body.appendChild(backdrop)
+      }
+    });
+  }
+
+  form.addEventListener('submit', (e) => {
+    let errors = validate(form, constraints) || null;
+    if(errors) {
+      afValidated = false
+      e.preventDefault()
+      showErrors(form, errors || {});
+    } else {
+      afValidated = true;
+    }
+  });
+
+  closeMOdalButton.addEventListener('click', ()=> {
+      modal.classList.remove('show')
+      modal.removeAttribute('style')
+      document.body.classList.remove(`modal-open`)
+      document.body.removeChild(backdrop)
+  })
+
+  const anchors = document.querySelectorAll('a[href*="#"]')
+  for (let anchor of anchors) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+
+      const blockID = anchor.getAttribute('href')?.substr(1)
+      if(blockID && null !== document.getElementById(blockID)) {
+        document.getElementById(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    })
+  }
 })

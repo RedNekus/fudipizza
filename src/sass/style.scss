@@ -114,6 +114,10 @@ strong {
 .is-hidden {
   display: none;
 }
+.is-fixed {
+  position: fixed;
+  width: 100%;
+}
 .fade {
   opacity: 0;
   transition: opacity .15s linear;

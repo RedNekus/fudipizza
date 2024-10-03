@@ -75,7 +75,7 @@ footer {
                 color: inherit;
                 &:hover {
                     color: var(--orange);
-                    &::before {
+                    & > i {
                         background-color: var(--orange);
                     }
                 }
@@ -138,5 +138,10 @@ footer {
         --app-link-padding: 5px 10px;
         --app-link-icon-w: 18px;
         --links-gap: 12px;
+        .grid {
+            &-links {
+                padding: 24px 0;
+            }
+        }
     }
 }

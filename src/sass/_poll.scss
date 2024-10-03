@@ -20,7 +20,6 @@
     }
 }
 .form {
-    --margin-top: 80px;
     $select:#{&}-select;
     &-control {
         @extend %input;
@@ -75,12 +74,14 @@
         --font-size: inherit;
         --margin-top: 32px;
         --check-size: 32px;
+        --check-margin: 50px;
         margin-top: var(--margin-top);
         font-size: var(--font-size);
         @media (max-width: $breakpoint-tablet) {
             --label-size: 20px;
             --font-size: 12px;
             --check-size: 18px;
+            --check-margin: 10px;
         }
         &-input {
             position: absolute;
@@ -110,7 +111,7 @@
                 height: var(--label-size);
                 border: none;
                 border-radius: 7px;
-                margin-right: 50px;
+                margin-right: var(--check-margin);
                 background-color: #FFFFFF;
                 box-shadow: 0px -2px 14.9px rgba(0, 0, 0, 0.1);
             }
@@ -128,6 +129,7 @@
     --margin-bottom: 80px;
     --btn-height: 88px;
     --btn-width: 380px;
+    --btn-font-size: 23px;
 
     & > .container {
         padding: var(--padding);
@@ -136,6 +138,7 @@
     &__btn {
         height: var(--btn-height);
         min-width: var(--btn-width);
+        font-size: var(--btn-font-size);
     }
     &__title {
         text-transform: uppercase;
@@ -147,6 +150,7 @@
         --margin-bottom: 50px;
         --btn-height: 52px;
         --btn-width: 220px;
+        --btn-font-size: 15px;
         .col-auto:not(:last-child) {
             margin-bottom: 12px;
         }
