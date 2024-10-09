@@ -18504,8 +18504,8 @@ const constraints = {
     },
     numericality: {
       onlyInteger: true,
-      greaterThan: 18,
-      message: "^Возрасто должен быть числом, которое больше 18"
+      greaterThan: 17,
+      message: "^Возраст должен быть не меньше 18 лет"
     }
   },
   city: {

@@ -63,6 +63,9 @@
         &__title-item {
             font-size: 12px;
         }
+        &__title {
+            text-align: center;
+        }
     }
     @media (min-width: $breakpoint-tablet) {
         &__wrap {

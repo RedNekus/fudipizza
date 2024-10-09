@@ -16,6 +16,9 @@
       color: inherit;
     }
   }
+  &__image {
+    display: flex;
+  }
   @media screen and (max-width: $breakpoint-tablet){
     &__title {
       text-align: center;

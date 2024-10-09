@@ -1,4 +1,11 @@
 .modal {
+    --min-height: 570px;
+    --border-radius: 50px;
+    --font-size: 35px;
+    --img-width: 153px;
+    --img-height: 111px;
+    --img-padding: 110px;
+    --padding: 40px;
     $this: &;
     position: fixed;
     top: 0;
@@ -40,36 +47,64 @@
         }
     }
     &-mark {
-        padding: 110px;
+        padding: var(--img-padding);
         text-align: center;
+        width: var(--img-width);
+        height: var(--img-height);
     }
     &-content {
         position: relative;
-        width: 100%;
+        width: calc(100% - 20px);
         background: #FFFFFF;
         box-shadow: 6px 6px 27.6px rgba(0, 0, 0, 0.15);
-        border-radius: 50px;
-        min-height: 570px;
+        border-radius: var(--border-radius);
+        min-height: var(--min-height);
         pointer-events: auto;
-        font-size: 35px;
+        font-size: var(--font-size);
+        margin: 0 auto;
     }
     &-header {
         position: relative;
+        display: flex;
+        justify-content: center;
     }
     &-body {
-        padding: 40px;
+        padding: var(--padding);
         text-align: center;
         p {
             margin: 0;
         }
     }
+    @media (max-width: $breakpoint-tablet) {
+        --border-radius: 25px;
+        --min-height: 205px;
+        --font-size: 13px;
+        --img-width: 66px;
+        --img-height: 48px;
+        --img-padding: 42px;
+        --padding: 12px;
+        &-dialog {
+            margin: 50% auto;
+        }
+    }
 }
 .close {
+    --top: 32px;
+    --right: 32px;
+    --cross-size: 35px;
     position: absolute;
-    right: 32px;
-    top: 32px;
+    right: var(--right);
+    top: var(--top);
     cursor: pointer;
     &::after {
-        content: url('data:image/svg+xml,%3Csvg%20width%3D%2233%22%20height%3D%2233%22%20viewBox%3D%220%200%2033%2033%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M31.8128%201.18756C30.6047%20-0.0206038%2028.646%20-0.0207202%2027.4378%201.18731L16.4985%2012.125L5.56211%201.18769C4.35402%20-0.0205053%202.3952%20-0.0205048%201.18711%201.18769C-0.0208268%202.39574%20-0.0208275%204.35426%201.18711%205.56231L12.1238%2016.5L1.18711%2027.4377C-0.0208275%2028.6457%20-0.020827%2030.6043%201.18711%2031.8123C2.3952%2033.0205%204.35402%2033.0205%205.56211%2031.8123L16.4985%2020.875L27.4378%2031.8127C28.646%2033.0207%2030.6047%2033.0206%2031.8128%2031.8124C33.0208%2030.6043%2033.0208%2028.6457%2031.8128%2027.4376L20.8762%2016.5L31.8128%205.56243C33.0208%204.35432%2033.0208%202.39568%2031.8128%201.18756Z%22%20fill%3D%22%23C9C4C4%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+        width: var(--cross-size);
+        height: var(--cross-size);
+        display: flex;
+        content: url('data:image/svg+xml,%3Csvg%20width%3D%22100%25%22%20viewBox%3D%220%200%2033%2033%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M31.8128%201.18756C30.6047%20-0.0206038%2028.646%20-0.0207202%2027.4378%201.18731L16.4985%2012.125L5.56211%201.18769C4.35402%20-0.0205053%202.3952%20-0.0205048%201.18711%201.18769C-0.0208268%202.39574%20-0.0208275%204.35426%201.18711%205.56231L12.1238%2016.5L1.18711%2027.4377C-0.0208275%2028.6457%20-0.020827%2030.6043%201.18711%2031.8123C2.3952%2033.0205%204.35402%2033.0205%205.56211%2031.8123L16.4985%2020.875L27.4378%2031.8127C28.646%2033.0207%2030.6047%2033.0206%2031.8128%2031.8124C33.0208%2030.6043%2033.0208%2028.6457%2031.8128%2027.4376L20.8762%2016.5L31.8128%205.56243C33.0208%204.35432%2033.0208%202.39568%2031.8128%201.18756Z%22%20fill%3D%22%23C9C4C4%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+    }
+    @media (max-width: $breakpoint-tablet) {
+        --top: 16px;
+        --right: 16px;
+        --cross-size: 14px;
     }
 }

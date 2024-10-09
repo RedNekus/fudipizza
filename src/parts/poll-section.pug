@@ -13,7 +13,7 @@ mixin select_col(name, options)
         .form-group
             select.form-select(name=name)
                 each option in options
-                    option(value="")=option
+                    option(value=option)=option
             .messages
 
 section.poll(id='poll')

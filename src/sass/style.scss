@@ -16,6 +16,7 @@ body {
   font-family: 'FuturaBookC';
   overflow-x: hidden;
   font-size: var(--font-size);
+  line-height: 1.25;
   margin: 0;
   padding: 0;
 }
@@ -97,18 +98,20 @@ strong {
 }
 .title-h1 {
   font-size: 23px;
-  line-height: 1.4;
+  line-height: 1.25;
   @media screen and (min-width: $breakpoint-tablet) {
     font-size: 65px;
+    line-height: 1.2;
   }
 }
 .title-h2 {
   font-size: 20px;
-  line-height: 1.4;
+  line-height: 1.0;
   font-weight: 700;
   font-family: 'FuturaDemiC';
   @media screen and (min-width: $breakpoint-tablet) {
     font-size: 45px;
+    line-height: 1.2;
   }
 }
 .is-hidden {

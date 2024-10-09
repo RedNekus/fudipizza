@@ -53,6 +53,7 @@
             margin-top: 80px;
             @media (max-width: $breakpoint-tablet) {
                 margin-top: 50px; 
+                margin-bottom: 40px;
             }
         }
         &.text-center {
@@ -156,6 +157,9 @@
         }
         .row {
             margin-bottom: 12px; 
+        }
+        &__title {
+            padding-top: 40px;
         }
     }
     @media (min-width: $breakpoint-tablet) {

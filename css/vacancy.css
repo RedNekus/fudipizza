@@ -10,6 +10,7 @@
 }
 .vacancy__title {
   text-transform: uppercase;
+  margin: 1rem 0;
 }
 .vacancy-grid__title {
   font-weight: 700;
