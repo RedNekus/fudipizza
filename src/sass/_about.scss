@@ -40,10 +40,10 @@
         */
     }
     &__title {
-        --padding: 70px;
+        --padding-title: 70px;
         text-transform: uppercase;
         text-align: center;
-        padding: var(--padding);
+        padding-bottom: var(--padding-title);
     }
     &__item-title {
         --font-size: 23px;
@@ -72,10 +72,10 @@
     @media (max-width: $breakpoint-tablet) {
         --width: 100%;
         --flex-width: 100%;
-        --padding: 4px 10px 40px 10px;
+        --padding: 40px 10px;
         --border-radius: 25px;
         &__title {
-            --padding: 36px;
+            --padding-title: 36px;
         }
         &__list {
             gap: 10px;
