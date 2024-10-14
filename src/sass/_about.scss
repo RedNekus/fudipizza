@@ -2,10 +2,9 @@
     --width: 380px;
     --flex-width: calc(33.3% - 14px);
     --gap: 21px;
-    --padding: 110px;
     --border-radius: 50px;
     & > .container {
-        padding: var(--padding);
+        padding: var(--container-padding);
     }
     &__wrap {
         overflow: hidden;
@@ -69,10 +68,13 @@
             display: none;
         }
     }
+    @media (max-width: $breakpoint-xxl) {
+        --width: 100%;
+    }
     @media (max-width: $breakpoint-tablet) {
         --width: 100%;
         --flex-width: 100%;
-        --padding: 40px 10px;
+        --container-padding: 40px 10px;
         --border-radius: 25px;
         &__title {
             --padding-title: 36px;

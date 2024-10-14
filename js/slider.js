@@ -67,11 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
         const updateParentHeight = () => {
             if(window.innerWidth >= 768) {
+                let offsetH = window.innerWidth >= 1200? 160 : 40;
+                console.log(offsetH);
                 if(items[0]) {
                     let position = items[0].getBoundingClientRect();
                     slider.style.height = `${position.height * 1.25}px`;
                     if(blockDots) {
-                        slider.parentElement.style.height = (position.height * 1.25 + title.offsetHeight + blockDots.offsetHeight + 160) + 'px'
+                        slider.parentElement.style.height = (position.height * 1.25 + title.offsetHeight + blockDots.offsetHeight + offsetH) + 'px'
                     }
                 }
             } else {

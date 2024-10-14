@@ -31,7 +31,6 @@ $breakpoint-xl:1200px;
             font-size: var(--font-size);
             line-height: 1.25;
             position: relative;
-            max-width: 580px;
             &-inner {
                 padding: 25px;
             }
@@ -90,6 +89,9 @@ $breakpoint-xl:1200px;
                 grid-row-start: 1;
                 grid-row-end: 3;
             }
+            &__item {
+                max-width: 580px;
+            }
         }
     }
     @media (max-width: $breakpoint-tablet) {
@@ -104,6 +106,9 @@ $breakpoint-xl:1200px;
             display: flex;
             flex-direction: column;
             gap: 15px;
+            &__picture img {
+                width: 100%;
+            }
         }
     }
 }

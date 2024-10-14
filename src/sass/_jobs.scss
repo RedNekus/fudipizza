@@ -1,7 +1,6 @@
 .jobs {
     & > .container {
-        --padding: 110px;
-        padding: var(--padding);
+        padding: var(--container-padding);
         position: relative;
     }
     &__title {
@@ -98,7 +97,7 @@
     }
     @media (max-width: $breakpoint-tablet) {
         & > .container {
-            --padding: 10px 10px 40px 10px;
+            --container-padding: 10px 10px 40px 10px;
         }
         &__title {
             margin: 50px 0;
@@ -134,7 +133,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
-                margin-top: 133px;
+                margin-top: 56px;
                 z-index: 2;
             }
             &:not(.slider) {
@@ -167,6 +166,13 @@
             }
             &.right {
                 transform: translateX(calc(100% + 40px));
+            }
+        }
+    }
+    @media (min-width: $breakpoint-xl) {
+        &__slider {
+            &.slider {
+                margin-top: 133px;
             }
         }
     }

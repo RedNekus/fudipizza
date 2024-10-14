@@ -123,16 +123,24 @@ header {
   .logo {
     --logo-gap: 20px;
     --logo-width: 100px;
+    --logo-font-size: 35px;
     display: flex;
     align-items: center;
     gap: var(--logo-gap);
     @media screen and (max-width:$breakpoint-xl) {
       --logo-gap: 14px;
       --logo-width: 64px;
+      --logo-font-size: 24px;
+    }
+    @media screen and (max-width:$breakpoint-lg) {
+      --logo-gap: 10px;
+      --logo-width: 40px;
+      --logo-font-size: 12px;
     }
     @media screen and (max-width: $breakpoint-tablet) {
       --logo-gap: 7px;
       --logo-width: 32px;
+      --logo-font-size: 16px;
     }
     &__img {
       width: var(--logo-width);
@@ -146,11 +154,8 @@ header {
       }
     }
     &__text {
-      font-size: 35px;
+      font-size: var(--logo-font-size);
       font-weight: bold;
       white-space: nowrap;
-      @media screen and (max-width: $breakpoint-tablet) {
-        font-size: 12px;
-      }
     }
   }

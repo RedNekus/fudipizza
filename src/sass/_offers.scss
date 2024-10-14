@@ -1,7 +1,6 @@
 .offers {
     & > .container {
-        --padding: 110px;
-        padding: var(--padding);
+        padding: var(--container-padding);
         position: relative;
     } 
     &__block {
@@ -19,8 +18,9 @@
         display: grid;
         grid-template-rows: auto 1fr;
         cursor: pointer;
+        justify-self: center;
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
     }
 
@@ -67,7 +67,7 @@
             text-align: center;
         }
     }
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-lg) {
         &__wrap {
             display: flex;
             justify-content: space-around;
